@@ -1,0 +1,35 @@
+.placeholder {
+  height: 58px;
+  position: relative;
+}
+
+.nav {
+  height: 58px;
+  width: 100%;
+  position: fixed;
+  text-transform: capitalize;
+  background-color: rgb(255, 116, 82);
+}
+.nav:after {
+  clear: both;
+}
+.left {
+  margin: 0.375rem;
+  float: left;
+}
+
+.right {
+  margin: 1rem;
+  color: rgb(23, 43, 77);
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none !important;
+  cursor: pointer;
+  float: right;
+  text-transform: uppercase;
+}
+
+.right:hover {
+  text-shadow: rgb(23, 43, 77) 0.5px 0.5px 0px;
+  color: antiquewhite;
+}

@@ -1,4 +1,7 @@
-import * as React from "react";
-import { render } from "react-dom";
+import * as React from 'react';
+import { render } from 'react-dom';
+import Routes from './routes';
+import './index.css';
 
-render(<h1>Testinggg</h1>, document.getElementById("main"));
+const rootElement = document.getElementById('main');
+render(<Routes />, rootElement);

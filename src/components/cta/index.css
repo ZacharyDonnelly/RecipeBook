@@ -1,0 +1,59 @@
+.container {
+  margin-top: 0.05rem;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.header {
+  font-size: 26px;
+  font-family: Inconsolata;
+  margin-left: 1.15rem;
+  margin-top: 0.25rem;
+}
+
+.imgContainer {
+  padding-bottom: 75%;
+  background: none;
+  position: relative;
+  flex-grow: 1;
+  overflow: hidden;
+  height: 0;
+}
+
+.img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.sub {
+  width: 85%;
+  margin-top: 0.25rem;
+  margin-left: 2.15rem;
+  padding-bottom: 0.5rem;
+}
+
+/*MEDIA*/
+@media screen and (min-width: 1300px) {
+  .container {
+    margin: 2rem;
+    padding: 3rem;
+    max-width: 700px;
+  }
+  .sub {
+    width: 100%;
+    font-size: 20px;
+    margin: 0.35rem 0 0 2rem;
+  }
+  .header {
+    font-size: 30px;
+    margin-left: 4rem;
+  }
+}
