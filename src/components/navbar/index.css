@@ -33,3 +33,135 @@
   text-shadow: rgb(23, 43, 77) 0.5px 0.5px 0px;
   color: antiquewhite;
 }
+.header {
+  font-size: 64px;
+  line-height: 1.25;
+  color: white;
+  font-weight: 500;
+  margin-left: 0.45rem;
+  margin-top: 5rem;
+  font-family: 'lato', sans-serif;
+}
+
+.sub {
+  font-family: 'lato', sans-serif;
+  margin-top: 1rem;
+  font-size: 26px;
+  margin-bottom: 0.65rem;
+  font-weight: 500;
+  margin-left: 0.75rem;
+  color: white;
+}
+.rotateDown {
+  transform: rotate(45deg) translate(7px, 6px) scale(0.925);
+}
+.rotateUp {
+  transform: rotate(-45deg) translate(7px, -6px) scale(0.95);
+}
+
+.animateDown {
+  animation: 0.5s slidein;
+  animation-name: dropFromTop;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(173, 173, 173, 1);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(173, 173, 173, 1);
+  box-shadow: 0px 2px 5px 0px rgba(173, 173, 173, 1);
+}
+.animateUp {
+  animation: 0.5s slideOut;
+  animation-name: riseUp;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+.menu {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(255, 116, 82);
+  margin-right: 7.5px;
+  position: absolute;
+  top: 7.5px;
+  cursor: pointer;
+  right: 0;
+}
+
+.bar {
+  cursor: pointer;
+  width: 57.5%;
+  z-index: 50;
+  color: white;
+  height: 3px;
+  background: white;
+  display: flex;
+  margin: 6.5px;
+  transition: all 0.4s ease;
+  top: 10px;
+}
+
+.dropdown {
+  background: white;
+  width: 100%;
+  height: 150px;
+  opacity: 0;
+  position: absolute;
+  top: 50px;
+}
+/*ANIMATIONS*/
+@keyframes dropFromTop {
+  0% {
+    height: 0;
+  }
+  15% {
+    height: 25px;
+    opacity: 0.15;
+  }
+  30% {
+    height: 50px;
+    opacity: 0.3;
+  }
+  45% {
+    height: 75px;
+    opacity: 0.45;
+  }
+  60% {
+    height: 100px;
+    opacity: 0.6;
+  }
+  75% {
+    height: 125px;
+    opacity: 0.75;
+  }
+  100% {
+    height: 150px;
+    opacity: 1;
+  }
+}
+@keyframes riseUp {
+  0% {
+    height: 150px;
+    opacity: 1;
+  }
+  15% {
+    height: 125px;
+    opacity: 0.75;
+  }
+  30% {
+    height: 100px;
+    opacity: 0.6;
+  }
+  45% {
+    height: 75px;
+    opacity: 0.45;
+  }
+  60% {
+    height: 50px;
+    opacity: 0.3;
+  }
+  75% {
+    height: 25px;
+    opacity: 0.15;
+  }
+  100% {
+    height: 0;
+  }
+}

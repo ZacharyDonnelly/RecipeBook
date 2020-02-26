@@ -5,7 +5,6 @@ const Navbar = React.lazy(() =>
 );
 const Hero = React.lazy(() => import(/* webpackChunkName: "Hero"*/ '../../components/hero'));
 const CTA = React.lazy(() => import(/* webpackChunkName: "CTA"*/ '../../components/cta'));
-
 const Landing: React.FunctionComponent<{}> = () => {
   return (
     <>
