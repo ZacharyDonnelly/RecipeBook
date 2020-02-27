@@ -5,16 +5,16 @@ const Logo = React.lazy(() => import(/* webpackChunkName: "Logo"*/ '../../assets
 
 const Index: React.FunctionComponent<{}> = () => {
   const [display, setDisplay]: any = React.useState(false);
-  const barOne: any = React.useRef([]);
-  const barTwo: any = React.useRef([]);
-  const barThree: any = React.useRef([]);
-  const dropRef: any = React.useRef([]);
+  const barOne: any = React.useRef<HTMLDivElement>(null);
+  const barTwo: any = React.useRef<HTMLDivElement>(null);
+  const barThree: any = React.useRef<HTMLDivElement>(null);
+  const dropRef: any = React.useRef<HTMLDivElement>(null);
   const clickHandler = () => {
     if (!display) {
       barTwo.current.style.opacity = 0;
       barOne.current.classList.add(styles.rotateDown);
       barThree.current.classList.add(styles.rotateUp);
-      // dropRef.current.classList.remove(styles.animateUp);
+      dropRef.current.classList.remove(styles.animateUp);
       dropRef.current.classList.add(styles.animateDown);
       setDisplay(!display);
     } else {
@@ -22,7 +22,7 @@ const Index: React.FunctionComponent<{}> = () => {
       barOne.current.classList.remove(styles.rotateDown);
       barThree.current.classList.remove(styles.rotateUp);
       dropRef.current.classList.remove(styles.animateDown);
-      // dropRef.current.classList.add(styles.animateUp);
+      dropRef.current.classList.add(styles.animateUp);
       setDisplay(!display);
     }
   };

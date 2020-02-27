@@ -8,7 +8,7 @@ const Logo: React.FunctionComponent<{}> = () => (
       x2="148.52"
       y2="112.81"
       fill="none"
-      stroke="#162b4d"
+      stroke="#d95526"
       strokeMiterlimit="10"
       strokeWidth="7.5"
     />
@@ -18,7 +18,7 @@ const Logo: React.FunctionComponent<{}> = () => (
       x2="89.15"
       y2="1.4"
       fill="none"
-      stroke="#162b4d"
+      stroke="#d95526"
       strokeMiterlimit="10"
       strokeWidth="7.5"
     />
@@ -28,7 +28,7 @@ const Logo: React.FunctionComponent<{}> = () => (
       x2="89.15"
       y2="1.4"
       fill="none"
-      stroke="#162b4d"
+      stroke="#d95526"
       strokeMiterlimit="10"
       strokeWidth="7.5"
     />
