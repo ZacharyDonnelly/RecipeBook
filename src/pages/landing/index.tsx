@@ -5,16 +5,18 @@ const Navbar = React.lazy(() =>
 );
 const Hero = React.lazy(() => import(/* webpackChunkName: "Hero"*/ '../../components/hero'));
 const CTA = React.lazy(() => import(/* webpackChunkName: "CTA"*/ '../../components/cta'));
+
 const Landing: React.FunctionComponent<{}> = () => {
+  const Loading = setTimeout(() => 500) ? null : 'Loading';
   return (
     <>
-      <React.Suspense fallback="Loading...">
+      <React.Suspense fallback={Loading}>
         <Navbar />
       </React.Suspense>
-      <React.Suspense fallback="Loading...">
+      <React.Suspense fallback={Loading}>
         <Hero />
       </React.Suspense>
-      <React.Suspense fallback="Loading...">
+      <React.Suspense fallback={Loading}>
         <CTA />
       </React.Suspense>
     </>
