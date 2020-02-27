@@ -60,7 +60,7 @@
 }
 
 .animateDown {
-  animation: 0.5s slidein;
+  animation-duration: 0.15s;
   animation-name: dropFromTop;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
@@ -69,7 +69,7 @@
   box-shadow: 0px 2px 5px 0px rgba(173, 173, 173, 1);
 }
 .animateUp {
-  animation: 0.5s slideOut;
+  animation-duration: 0.15s;
   animation-name: riseUp;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
@@ -101,10 +101,10 @@
 .dropdown {
   background: white;
   width: 100%;
-  height: 150px;
+  /* height: 150px; */
   opacity: 0;
   position: absolute;
-  top: 50px;
+  top: 58.2px;
 }
 /*ANIMATIONS*/
 @keyframes dropFromTop {
