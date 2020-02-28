@@ -8,6 +8,7 @@ const Index: React.FunctionComponent<{}> = () => {
       <section className={styles.hero}>
         <header className={styles.header}>RecipeBook</header>
         <h5 className={styles.sub}>Recipe Organizer</h5>
+        <button className={styles.btn}>Click here to Sign up</button>
       </section>
     </LazyLoad>
   );

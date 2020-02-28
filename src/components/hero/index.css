@@ -1,12 +1,13 @@
 .hero {
   display: block;
-  height: 356px;
-  width: 100%;
+  height: 400px;
+  width: 100% !important;
+  margin-top: -3.75rem;
   margin-right: 150px;
   overflow-x: hidden !important;
-  padding-top: 13rem;
+  padding-top: 18rem;
   background: linear-gradient(rgba(232, 232, 232, 0), rgba(0, 0, 0, 0.8)),
-    url('../../assets/hero.jpeg') no-repeat 0 0;
+    url('../../assets/hero.jpg') no-repeat 0 0;
   background-size: cover;
   background-position: top;
   background-origin: padding-box, padding-box;
@@ -34,6 +35,21 @@
   color: white;
 }
 
+.btn {
+  margin-top: 3.5rem;
+  border: 3px solid #d95526;
+  margin-left: 3.8rem;
+  background-color: transparent;
+  width: 210px;
+  outline: none;
+  text-transform: capitalize;
+  height: 43px;
+  font-size: 17px;
+  font-family: proxima nova, sans-serif;
+  font-weight: 500;
+  color: #fff;
+}
+
 /*MEDIA*/
 @media screen and (min-width: 1300px) {
   .hero {
@@ -52,8 +68,18 @@
     margin-left: 4rem;
   }
 }
-
-/* @media screen and (max-width: 800px)
-#home-page .hero-image {
-    height: 34em;
-    padding-top: 180px; */
+@media screen and (max-width: 1024px) and (min-height: 1366px) {
+  .btn {
+    margin-left: 0.95rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .btn {
+    margin-left: 0.35rem;
+  }
+}
+@media screen and (max-width: 414px) {
+  .btn {
+    margin-left: 0.35rem !important;
+  }
+}
