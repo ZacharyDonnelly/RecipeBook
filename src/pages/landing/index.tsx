@@ -4,7 +4,7 @@ const Navbar = React.lazy(() =>
   import(/* webpackChunkName: "Navbar"*/ /* webpackPreload: true*/ '../../components/navbar'),
 );
 const Hero = React.lazy(() => import(/* webpackChunkName: "Hero"*/ '../../components/hero'));
-const CTA = React.lazy(() => import(/* webpackChunkName: "CTA"*/ '../../components/cta'));
+const CTA = React.lazy(() => import(/* webpackChunkName: "CTA"*/ '../../components/tagline'));
 
 const Landing: React.FunctionComponent<{}> = () => {
   const Loading = setTimeout(() => 500) ? null : 'Loading';
