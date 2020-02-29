@@ -42,7 +42,7 @@ const CallToAction = () => {
       </React.Suspense>
       <LazyLoad once>
         <section className={styles.inOnePlaceSection}>
-          <div className={styles.inOnePlaceImg} />
+          <div className={styles.backgroundTabletImage} />
           <h3 className={styles.inOnePlaceHeader}>All in One Place</h3>
           <h5 className={styles.imageHeader}>Available on any Device!</h5>
           <h5 className={styles.subHeader}>Save recipes from any website or blog.</h5>
@@ -61,23 +61,25 @@ const CallToAction = () => {
       </LazyLoad>
       <div className={styles.imageGroup}>
         <LazyLoad once>
-          <div className={styles.secondImage} />
+          <div className={styles.laptopImage} />
         </LazyLoad>
         <LazyLoad once>
-          <div className={styles.thirdImage} />
+          <div className={styles.tabletImage} />
         </LazyLoad>
         <LazyLoad once>
-          <div className={styles.fourthImage} />
+          <div className={styles.phoneImage} />
         </LazyLoad>
       </div>
       <LazyLoad once>
-        <div className={styles.personalizeImage} />
-        <h3 className={styles.personalizeHeader}>Personalize</h3>
-        <p className={styles.personalDescription}>
-          Make it yours Add your own recipes and your own pictures. Tweak and edit any recipe to
-          make it your own, either on your device or at your desktop.
-        </p>
+        <div className={styles.backgroundSpicesImage} />
       </LazyLoad>
+      <h3 className={styles.personalizeHeader}>Personalize</h3>
+      <h5 className={styles.personalizeSubHeader}>Make it Your Own</h5>
+      <p className={styles.personalizeDescription}>
+        It's yours. Add your own personal recipes or any recipe that you may find online. Tweak and
+        edit any recipe to make it your own, either on your device or at your desktop. After cooking
+        it the first time, you think of a different way to do it next time? Leave yourself a note!
+      </p>
     </div>
   );
 };

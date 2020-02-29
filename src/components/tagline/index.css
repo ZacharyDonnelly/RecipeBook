@@ -18,22 +18,22 @@
 }
 
 /*IMAGES*/
-.secondImage {
-  background: url('../../assets/laptop.png') no-repeat;
+.laptopImage {
+  background: url('../../assets/images/laptop.png') no-repeat;
   height: 135px;
   width: 235px;
   background-position: center;
 }
-.thirdImage {
-  background: url('../../assets/tablet.png') no-repeat;
+.tabletImage {
+  background: url('../../assets/images/tablet.png') no-repeat;
   background-position: center;
   height: 160px;
   width: 80px;
   margin-top: -1rem;
   margin-left: -3.5rem;
 }
-.fourthImage {
-  background: url('../../assets/phone.png') no-repeat;
+.phoneImage {
+  background: url('../../assets/images/phone.png') no-repeat;
   background-position: center;
   height: 160px;
   width: 80px;
@@ -56,9 +56,9 @@
   display: block;
   text-align: center;
 }
-.inOnePlaceImg {
+.backgroundTabletImage {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
-    url('../../assets/background-tab.jpg') no-repeat;
+    url('../../assets/images/background-tab.jpg') no-repeat;
   width: 100%;
   padding: 0 2rem;
   margin-left: -7rem;
@@ -71,8 +71,8 @@
   color: #fff;
   font-family: proxima nova, sans-serif;
   font-size: 32px;
-  margin-top: -20rem;
-  margin-bottom: 15rem;
+  margin-top: -15rem;
+  margin-bottom: 12rem;
 }
 .subHeader {
   font-size: 19px;
@@ -91,14 +91,14 @@
 }
 
 /*PERSONALIZE*/
-.personalizeImage {
+.backgroundSpicesImage {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
-    url('../../assets/spices.jpg') no-repeat;
+    url('../../assets/images/spice.jpg') no-repeat;
   background-size: cover;
   background-position: right 40%;
   height: 250px;
   margin: -1em 0 1em -1em !important;
-  padding: 1rem;
+  padding: 0.5rem 1.25rem;
   width: 100%;
 }
 .personalizeHeader {
@@ -107,6 +107,20 @@
   font-size: 28px;
   margin-top: -12rem;
   margin-bottom: 15rem;
+}
+.personalizeSubHeader {
+  font-family: proxima nova, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  margin: -2.5em 0 1em -0.6rem;
+}
+.personalizeDescription {
+  margin: 1em 0 1.5em 2.5rem;
+  width: 75%;
+  color: #7d8485;
+  font-size: 18px;
+  line-height: 27px;
+  font-family: proxima nova, sans-serif;
 }
 /*SVG*/
 .group {
@@ -142,7 +156,7 @@
   .description {
     line-height: 2em;
     margin-top: 1.5rem;
-    margin-left: 6.5em;
+    margin-left: 4.5em;
     width: 620px;
     font-size: 16.5px;
   }
@@ -157,12 +171,9 @@
   .inOnePlaceHeader {
     font-size: 42px;
   }
-  .personalDescription {
-    margin: 1em 0 1.5em;
-    color: #7d8485;
-    font-size: 18px;
-    line-height: 27px;
-    font-family: proxima nova, sans-serif;
+  .personalizeDescription {
+    margin: 1em 0 1.5em 39.5rem;
+    width: 25%;
   }
   .group {
     margin-bottom: 6.5rem;
@@ -179,6 +190,8 @@
   .imageGroup {
     margin-left: 69rem;
     margin-top: -23.5rem;
+    position: relative;
+    z-index: -1;
     margin-bottom: 9rem;
   }
   .imageHeader {
@@ -218,6 +231,16 @@
   }
   .personalizeHeader {
     font-size: 38px;
+  }
+  .personalizeSubHeader {
+    font-size: 22px;
+    margin: -2.5em 0 1em 0.25em;
+  }
+  .personalizeDescription {
+    margin: 1em 0 1.5em 14.5rem;
+    width: 55%;
+    font-size: 18px;
+    line-height: 27px;
   }
   .group {
     margin-left: 19rem;
@@ -300,6 +323,9 @@
     line-height: 1.65;
     margin: 1em 0 0 12.5rem;
     font-family: proxima nova, sans-serif;
+  }
+  .personalizeDescription {
+    margin-left: 5.65rem;
   }
 }
 
