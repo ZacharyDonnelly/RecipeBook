@@ -13,10 +13,9 @@
 .description {
   color: #7d8485;
   line-height: 1.75em;
-  margin: 1em 0 1.5em;
+  margin: 1em 0 1.5em 1rem;
   text-align: left;
 }
-/* linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)) */
 
 /*IMAGES*/
 .secondImage {
@@ -43,13 +42,13 @@
 }
 .imageGroup {
   display: flex;
-  margin-left: 90em;
-  margin-bottom: 13.5rem;
+  margin-left: 3rem;
+  margin-top: -6rem;
+  margin-bottom: 4rem;
 }
 .imageHeader {
   color: #222;
-  margin-top: -1rem;
-  margin-bottom: 1rem;
+  margin: -1rem 1rem 1rem 0;
   font-size: 28px;
   font-family: proxima nova, sans-serif;
 }
@@ -72,9 +71,23 @@
   color: #fff;
   font-family: proxima nova, sans-serif;
   font-size: 32px;
-  margin-top: -16rem;
+  margin-top: -20rem;
   margin-bottom: 15rem;
-  /* text-align: center; */
+}
+.subHeader {
+  font-size: 19px;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-left: 0;
+  font-family: proxima nova, sans-serif;
+}
+.subText {
+  color: #7d8485;
+  width: 75%;
+  text-align: left;
+  font-size: 18px;
+  margin: 1em 0 0 3rem;
+  font-family: proxima nova, sans-serif;
 }
 
 /*PERSONALIZE*/
@@ -102,6 +115,7 @@
   flex-direction: row;
   margin-bottom: 5rem;
   margin-right: 1.25rem;
+  margin-left: 1rem;
 }
 .svgOne,
 .svgTwo,
@@ -162,22 +176,51 @@
     margin-right: 235px;
     margin-top: 0;
   }
+  .imageGroup {
+    margin-left: 69rem;
+    margin-top: -23.5rem;
+    margin-bottom: 9rem;
+  }
+  .imageHeader {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+  }
+  .subHeader {
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    margin-left: -29.1rem;
+    font-family: proxima nova, sans-serif;
+  }
+  .subText {
+    color: #7d8485;
+    width: 25%;
+    font-size: 18px;
+    line-height: 1.65;
+    margin: 1em 0 0 30rem;
+    font-family: proxima nova, sans-serif;
+  }
+  .inOnePlaceHeader {
+    margin-top: -15rem;
+    margin-bottom: 8.75rem;
+  }
 }
 @media screen and (max-width: 1024px) and (min-width: 800px) {
   .header {
     margin-top: 2rem;
   }
   .descriptionContainer {
-    width: 75%;
+    width: 78%;
   }
   .description {
-    margin-left: 33%;
+    margin-left: 15.5rem;
+    margin-bottom: 2.5rem;
   }
   .personalizeHeader {
     font-size: 38px;
   }
   .group {
-    margin-left: 16.5rem;
+    margin-left: 19rem;
   }
   .svgOne {
     margin-right: 75px;
@@ -186,7 +229,28 @@
     margin-right: 85px;
   }
   .imageGroup {
-    margin-left: 4rem;
+    margin-left: 24.75rem;
+  }
+  .inOnePlaceHeader {
+    margin-top: -15rem;
+    margin-bottom: 11rem;
+  }
+  .imageHeader {
+    display: none;
+  }
+  .subHeader {
+    font-size: 19px;
+    font-weight: bold;
+    margin: 1.5rem 0 2.25rem 4.75rem;
+    font-family: proxima nova, sans-serif;
+  }
+  .subText {
+    color: #7d8485;
+    width: 55%;
+    font-size: 18px;
+    line-height: 1.65;
+    margin: 1em 0 0 17.5rem;
+    font-family: proxima nova, sans-serif;
   }
 }
 @media screen and (min-width: 700px) and (max-width: 768px) {
@@ -212,8 +276,30 @@
   .svgTwo {
     margin-right: 100px;
   }
+  .inOnePlaceHeader {
+    margin-top: -15rem;
+    margin-left: 2rem;
+    margin-bottom: 11rem;
+  }
+  .imageHeader {
+    display: none;
+  }
   .imageGroup {
-    margin-left: 3rem;
+    margin-left: 16rem;
+  }
+  .subHeader {
+    font-size: 19px;
+    font-weight: bold;
+    margin: 1.5rem 0 2.25rem 2rem;
+    font-family: proxima nova, sans-serif;
+  }
+  .subText {
+    color: #7d8485;
+    width: 55%;
+    font-size: 18px;
+    line-height: 1.65;
+    margin: 1em 0 0 12.5rem;
+    font-family: proxima nova, sans-serif;
   }
 }
 
@@ -223,5 +309,19 @@
   }
   .svgTwo {
     margin-right: 42.5px;
+  }
+  .inOnePlaceHeader {
+    margin-top: -15rem;
+    margin-bottom: 10rem;
+  }
+  .imageHeader {
+    display: none;
+  }
+  .subText {
+    width: 85%;
+    margin-left: 2rem;
+  }
+  .imageGroup {
+    margin-left: 2.3rem;
   }
 }
