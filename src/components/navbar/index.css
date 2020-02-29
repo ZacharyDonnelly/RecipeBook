@@ -1,19 +1,9 @@
 .placeholder {
   height: 58px;
+  width: 100%;
   position: relative;
 }
-/* .logoContainer {
-  background: url('../../assets/logo.png') no-repeat 0 0;
-  background-position: top;
-  background-origin: padding-box, padding-box;
-  background-clip: border-box, border-box;
-  height: 165px;
-  width: 105px;
-  position: absolute;
-  top: 10px;
-  left: -15px;
-  z-index: 105;
-} */
+
 .nav {
   height: 58px;
   width: 100%;
@@ -87,10 +77,8 @@
 .menu {
   height: 50px;
   width: 50px;
-  /* background-color: #333; */
-  margin-right: 7.5px;
   position: absolute;
-  top: 7.5px;
+  top: 0;
   cursor: pointer;
   right: 0;
 }
@@ -98,7 +86,6 @@
 .bar {
   cursor: pointer;
   width: 57.5%;
-  z-index: 50;
   color: white;
   height: 3px;
   background: white;
@@ -106,7 +93,7 @@
   margin: 6.5px;
   transition: all 0.4s ease;
   top: 10px;
-  z-index: 5;
+  z-index: 100;
 }
 
 .dropdown {

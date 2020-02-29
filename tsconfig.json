@@ -4,6 +4,7 @@
     "noImplicitAny": false,
     "sourceMap": true,
     "strict": true,
+    "strictNullChecks": false,
     "module": "ESNEXT",
     "target": "ES2019",
     "jsx": "react",

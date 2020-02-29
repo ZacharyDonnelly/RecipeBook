@@ -41,16 +41,28 @@ const CallToAction = () => {
         </div>
       </React.Suspense>
       <LazyLoad once>
-        <div className={styles.personalizeImage} />
-        <h3 className={styles.personalizeHeader}>Personalize</h3>
+        <div className={styles.inOnePlaceImg} />
+        <h3 className={styles.inOnePlaceHeader}>All in One Place</h3>
         <h5 className={styles.imageHeader}>Available on any Device!</h5>
       </LazyLoad>
-      <LazyLoad once>
-        <div className={styles.imageGroup}>
+      <div className={styles.imageGroup}>
+        <LazyLoad once>
           <div className={styles.secondImage} />
+        </LazyLoad>
+        <LazyLoad once>
           <div className={styles.thirdImage} />
+        </LazyLoad>
+        <LazyLoad once>
           <div className={styles.fourthImage} />
-        </div>
+        </LazyLoad>
+      </div>
+      <LazyLoad once>
+        <div className={styles.personalizeImage} />
+        <h3 className={styles.personalizeHeader}>Personalize</h3>
+        <p className={styles.personalDescription}>
+          Make it yours Add your own recipes and your own pictures. Tweak and edit any recipe to
+          make it your own, either on your device or at your desktop.
+        </p>
       </LazyLoad>
     </div>
   );
