@@ -41,16 +41,42 @@ const CallToAction = () => {
         </div>
       </React.Suspense>
       <LazyLoad once>
+        <section className={styles.inOnePlaceSection}>
+          <div className={styles.inOnePlaceImg} />
+          <h3 className={styles.inOnePlaceHeader}>All in One Place</h3>
+          <h5 className={styles.imageHeader}>Available on any Device!</h5>
+          <h5 className={styles.subHeader}>Save recipes from any website or blog.</h5>
+          <p className={styles.subText} style={{ marginBottom: '3rem' }}>
+            Easily grab that perfect recipe from any website or blog, and leave the rest to us.
+            RecipeBook's recipe saver works with any website in English, and many that aren't in
+            English.
+          </p>
+          <h5 className={styles.subHeader}>Your recipes are always at your fingertips.</h5>
+          <p className={styles.subText} style={{ marginBottom: '9rem' }}>
+            With Android, iOS and web apps, we've got you covered. Desktop, tablet and phone. Online
+            and offline. In the kitchen, in the grocery store, at the office -- wherever you need
+            them.
+          </p>
+        </section>
+      </LazyLoad>
+      <div className={styles.imageGroup}>
+        <LazyLoad once>
+          <div className={styles.secondImage} />
+        </LazyLoad>
+        <LazyLoad once>
+          <div className={styles.thirdImage} />
+        </LazyLoad>
+        <LazyLoad once>
+          <div className={styles.fourthImage} />
+        </LazyLoad>
+      </div>
+      <LazyLoad once>
         <div className={styles.personalizeImage} />
         <h3 className={styles.personalizeHeader}>Personalize</h3>
-        <h5 className={styles.imageHeader}>Available on any Device!</h5>
-      </LazyLoad>
-      <LazyLoad once>
-        <div className={styles.imageGroup}>
-          <div className={styles.secondImage} />
-          <div className={styles.thirdImage} />
-          <div className={styles.fourthImage} />
-        </div>
+        <p className={styles.personalDescription}>
+          Make it yours Add your own recipes and your own pictures. Tweak and edit any recipe to
+          make it your own, either on your device or at your desktop.
+        </p>
       </LazyLoad>
     </div>
   );
