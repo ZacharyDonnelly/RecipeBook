@@ -30,16 +30,29 @@
 .svgTwo,
 .svgThree {
   color: #d95526;
+  margin-top: 1rem;
   font-family: Gotham XNarrow;
 }
 .svgHeader {
   margin-bottom: 0.8rem;
 }
+.svgHeaderThree {
+  margin-bottom: 0.8rem;
+  margin-left: -2.25rem !important;
+}
+
 .svgOne {
-  margin-right: 50px;
+  margin-right: 35px;
+  margin-left: -0.75rem;
 }
 .svgTwo {
-  margin-right: 50px;
+  margin-right: 35px;
+}
+.svgThree {
+  margin-top: 1rem;
+  margin-right: 0 !important;
+  position: absolute;
+  right: -3.45rem;
 }
 
 /*MEDIA*/
@@ -73,7 +86,9 @@
   }
   .svgTwo {
     margin-right: 235px;
-    margin-top: 0;
+  }
+  .svgThree {
+    right: 34.5rem;
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 800px) {
@@ -91,10 +106,13 @@
     margin-left: 19rem;
   }
   .svgOne {
-    margin-right: 75px;
+    margin-right: 90px;
   }
   .svgTwo {
     margin-right: 85px;
+  }
+  .svgThree {
+    right: 12rem;
   }
 }
 @media screen and (min-width: 700px) and (max-width: 768px) {
@@ -117,6 +135,17 @@
   .svgTwo {
     margin-right: 100px;
   }
+  .svgThree {
+    right: 5rem;
+  }
+}
+@media screen and (max-width: 414px) and (min-width: 412px) and (min-height: 736px) and (max-height: 800px) {
+  .svgOne {
+    margin-right: 55px;
+  }
+  .svgThree {
+    right: -2.5rem;
+  }
 }
 
 @media screen and (max-width: 375px) and (min-height: 812px) {
@@ -125,5 +154,10 @@
   }
   .svgTwo {
     margin-right: 42.5px;
+  }
+}
+@media screen and (max-width: 412px) and (min-width: 400px) and (min-height: 730px) {
+  .svgOne {
+    margin-right: 65px !important;
   }
 }

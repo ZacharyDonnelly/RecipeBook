@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import * as styles from './navbar.module.css';
 
 const Index: React.FunctionComponent<{}> = () => {
@@ -7,6 +8,8 @@ const Index: React.FunctionComponent<{}> = () => {
   const barTwo: any = React.useRef<HTMLDivElement>(null);
   const barThree = React.useRef<HTMLDivElement>(null);
   const dropRef = React.useRef<HTMLDivElement>(null);
+  const linkRef = React.useRef<HTMLAnchorElement>(null);
+  const linkRefTwo = React.useRef<HTMLAnchorElement>(null);
   const clickHandler = () => {
     if (!display) {
       barTwo.current.style.opacity = 0;
@@ -38,10 +41,14 @@ const Index: React.FunctionComponent<{}> = () => {
         barOne.current.style.background = '#000';
         barTwo.current.style.background = '#000';
         barThree.current.style.background = '#000';
+        linkRef.current.style.color = '#000';
+        linkRefTwo.current.style.color = '#000';
       } else if (scroll < 800) {
         barOne.current.style.background = '#fff';
         barTwo.current.style.background = '#fff';
         barThree.current.style.background = '#fff';
+        linkRef.current.style.color = '#fff';
+        linkRefTwo.current.style.color = '#fff';
       }
     };
     window.addEventListener('scroll', handleScroll);
@@ -50,12 +57,27 @@ const Index: React.FunctionComponent<{}> = () => {
   return (
     <div className={styles.placeholder}>
       <nav className={styles.nav}>
+        <Link to="login" className={styles.navLinkOne} ref={linkRef}>
+          Login
+        </Link>
+        <Link to="signup" className={styles.navLinkTwo} ref={linkRefTwo}>
+          Signup
+        </Link>
         <div className={styles.menu} onClick={() => clickHandler()}>
           <div className={styles.bar} ref={barOne} />
           <div className={styles.bar} ref={barTwo} />
           <div className={styles.bar} ref={barThree} />
         </div>
-        <div className={styles.dropdown} ref={dropRef} />
+        <div className={styles.dropdown} ref={dropRef}>
+          <span className={styles.dropdownContainer}>
+            <span>
+              <Link to="signup" className={styles.dropdownLink} />
+            </span>
+            <span>
+              <Link to="login" className={styles.dropdownLink} />
+            </span>
+          </span>
+        </div>
       </nav>
     </div>
   );

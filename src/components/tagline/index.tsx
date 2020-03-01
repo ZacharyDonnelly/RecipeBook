@@ -33,8 +33,8 @@ const CallToAction = () => {
             <h5 className={styles.svgHeader}>Personalize</h5>
             <Personalize />
           </div>
-          <div className={styles.svgThree}>
-            <h5 className={styles.svgHeader}>Kitchen Helper</h5>
+          <div className={styles.svgThree} style={{ margin: '0 !important' }}>
+            <h5 className={styles.svgHeaderThree}>Kitchen Helper</h5>
             <Recipes />
           </div>
         </div>

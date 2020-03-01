@@ -1,7 +1,7 @@
 .hero {
   display: block;
   height: 400px;
-  width: 100% !important;
+  width: 100vw !important;
   margin-top: -3.75rem;
   margin-right: 150px;
   overflow-x: hidden !important;
