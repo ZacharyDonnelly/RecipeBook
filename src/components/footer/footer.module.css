@@ -1,0 +1,119 @@
+.footer {
+  padding: 22.5px 0;
+  height: 125px;
+  width: 100%;
+  position: relative;
+  background-color: #333;
+  color: white;
+  line-height: inherit;
+  display: block;
+  border-top: 1px solid #999;
+}
+.subHeader {
+  color: #fff;
+  font-size: 19px;
+  font-family: Gotham XNarrow, sans-serif;
+  margin-left: 5.25rem;
+  margin-bottom: 0.75rem;
+}
+.copyright {
+  font-size: 13px;
+  color: inherit;
+  position: absolute;
+  bottom: 1rem;
+  left: 1.45rem;
+}
+.social {
+  position: absolute;
+  bottom: 5rem;
+  left: 4rem;
+}
+
+.instagram {
+  position: inherit;
+  left: 9.25rem;
+  margin-top: 0.05rem;
+}
+.facebook {
+  position: inherit;
+  left: 6rem;
+  margin-top: -0.4rem;
+}
+.twitter {
+  position: inherit;
+  left: 3.55rem;
+  margin-top: -0.05rem;
+}
+
+/*MEDIA*/
+@media screen and (min-width: 1300px) {
+  .social {
+    bottom: 5rem;
+    left: 45rem;
+  }
+  .footer {
+    padding-bottom: 10px;
+  }
+  .copyright {
+    bottom: 1rem;
+    left: 42.25rem;
+  }
+}
+/*IPAD PRO*/
+@media screen and (min-width: 1024px) and (max-height: 1366px) and (min-height: 1300px) {
+  .social {
+    bottom: 5rem;
+    left: 25rem;
+  }
+  .footer {
+    padding-bottom: 10px;
+  }
+  .copyright {
+    bottom: 1rem;
+    left: 22.5rem;
+  }
+}
+/*IPAD REGULAR*/
+@media screen and (min-height: 1024px) and (max-width: 768px) {
+  .social {
+    bottom: 5rem;
+    left: 16rem;
+  }
+  .copyright {
+    bottom: 1rem;
+    left: 13.5rem;
+  }
+}
+/*IPHONE 6/7/8 PLUS*/
+@media screen and (min-height: 736px) and (max-width: 414px) {
+  .social {
+    left: 5rem;
+    bottom: 5rem;
+  }
+  .copyright {
+    left: 2.25rem;
+    bottom: 1rem;
+  }
+}
+
+/*IPHONE X*/
+@media screen and (min-height: 812px) and (max-width: 375px) {
+  .social {
+    bottom: 5rem;
+    left: 3.5rem;
+  }
+  .copyright {
+    bottom: 1rem;
+    left: 1.25rem;
+  }
+}
+/*NEXUS*/
+@media screen and (max-height: 732px) and (max-width: 412px) and (min-width: 410px) {
+  .social {
+    bottom: 5rem;
+  }
+  .copyright {
+    bottom: 1rem;
+    left: 2rem;
+  }
+}

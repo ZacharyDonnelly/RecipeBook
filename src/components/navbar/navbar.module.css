@@ -76,12 +76,17 @@
 }
 .menu {
   height: 50px;
+  padding-top: 7.5px;
   width: 50px;
   position: absolute;
-  top: 0;
+  top: 7.5px;
+  right: 0.5rem;
   cursor: pointer;
-  right: 0;
   z-index: 100;
+}
+.navLinkOne,
+.navLinkTwo {
+  display: none;
 }
 
 .bar {
@@ -93,7 +98,7 @@
   display: flex;
   margin: 6.5px;
   transition: all 0.4s ease;
-  top: 10px;
+  top: 5px;
   z-index: 100;
 }
 
@@ -105,15 +110,54 @@
   z-index: 99;
   top: 0;
 }
+.dropdownContainer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+}
+.dropdownLink {
+  z-index: 100;
+  text-decoration: none;
+  position: relative;
+  font-family: Gotham XNarrow, sans-serif;
+  color: #000;
+  font-size: 22px;
+  font-weight: 500;
+}
+
 /*MEDIA*/
-/* @media screen and (max-width: 414px) {
-  .logoContainer {
-    background: url('../../assets/RecipeBook-2.png') no-repeat;
-    margin-left: -80px;
-    margin-top: -78px;
-    width: 100%;
+@media screen and (min-width: 1300px) {
+  .menu {
+    display: none;
   }
-} */
+  .bar {
+    display: none;
+  }
+  .navLinkOne,
+  .navLinkTwo {
+    display: block;
+    text-decoration: none !important;
+    font-family: Gotham XNarrow, sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 24px !important;
+    cursor: pointer !important;
+    position: absolute !important;
+    top: 0.75rem !important;
+    z-index: 10 !important;
+  }
+  .navLinkOne {
+    right: 6.5rem !important;
+  }
+  .navLinkOne:hover,
+  .navLinkTwo:hover {
+    color: #d95526 !important;
+  }
+  .navLinkTwo {
+    right: 1rem;
+  }
+}
 /*ANIMATIONS*/
 @keyframes dropFromTop {
   0% {

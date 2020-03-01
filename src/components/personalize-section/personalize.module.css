@@ -1,0 +1,104 @@
+/*PERSONALIZE*/
+.backgroundSpicesImage {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+    url('../../assets/images/spice.jpg') no-repeat;
+  background-size: cover;
+  background-position: right 40%;
+  height: 250px;
+  margin: -1em 0 1em -1em !important;
+  padding: 0.5rem 0.5rem;
+  width: 100vw;
+}
+.personalizeHeader {
+  color: #fff;
+  font-family: proxima nova, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  margin-top: -12rem;
+  margin-bottom: 15rem;
+  margin-left: 7rem;
+}
+.personalizeSubHeader {
+  font-family: proxima nova, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  margin: -2.5em 0 1em 6rem;
+}
+.personalizeDescription {
+  margin: 1em 0 1.5em 3.5rem;
+  width: 75%;
+  color: #7d8485;
+  font-size: 18px;
+  line-height: 27px;
+  font-family: proxima nova, sans-serif;
+}
+.btn {
+  margin: 1rem 0 0 5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  background-color: #ff7452;
+  width: 265px;
+  padding: 0 1rem;
+  outline: none;
+  text-transform: capitalize;
+  height: 40px;
+  font-size: 17px;
+  font-family: Gotham XNarrow, sans-serif;
+  font-weight: 500;
+  color: #333;
+}
+.btn:hover {
+  background-color: #888;
+}
+
+/*MEDIA*/
+@media screen and (min-width: 1300px) {
+  .personalizeHeader {
+    font-size: 42px;
+    margin-left: 45rem;
+  }
+  .personalizeSubHeader {
+    margin-left: 47rem;
+  }
+  .personalizeDescription {
+    margin: 1em 0 1.5em 39.5rem;
+    width: 25%;
+  }
+  .btn {
+    margin-left: 44rem;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 800px) {
+  .personalizeHeader {
+    font-size: 38px;
+    margin-left: 25rem;
+  }
+  .personalizeSubHeader {
+    font-size: 22px;
+    margin: -2.5em 0 1em 18.5em;
+  }
+  .personalizeDescription {
+    margin: 1em 0 1.5em 14.5rem;
+    width: 55%;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .btn {
+    margin-left: 25rem;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 768px) {
+  .personalizeHeader {
+    font-size: 32px;
+    margin-left: 18.5rem;
+  }
+  .personalizeSubHeader {
+    margin-left: 18rem;
+  }
+  .personalizeDescription {
+    margin-left: 5.65rem;
+  }
+  .btn {
+    margin-left: 16rem;
+  }
+}

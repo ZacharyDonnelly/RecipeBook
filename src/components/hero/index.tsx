@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as styles from './index.css';
+import * as styles from './hero.module.css';
 import LazyLoad from 'react-lazyload';
 
 const Index: React.FunctionComponent<{}> = () => {
