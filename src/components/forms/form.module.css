@@ -1,0 +1,56 @@
+.form {
+  display: flex;
+  margin: 15px;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 42.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.control {
+  width: 300px;
+  padding: 0.5rem 0;
+  margin: 5px 0;
+}
+
+.input {
+  height: 30px;
+  width: 250px;
+  margin-left: 5px;
+  padding-left: 5px;
+  outline: none;
+}
+
+.black:focus {
+  outline: 1px solid #231f20;
+}
+
+.orange:focus {
+  outline: 1px solid #f7941d;
+}
+
+.btn {
+  margin-top: 4px;
+  width: 200px;
+  outline: none;
+  padding: 0.3rem 0.25rem;
+  border: 2px solid #231f20;
+  background: transparent;
+}
+.btn:active {
+  background: linear-gradient(
+    90deg,
+    rgba(68, 68, 68, 1) 0%,
+    rgba(247, 148, 29, 0.6222864145658263) 47%
+  );
+}
+
+.link {
+  font-size: 13px;
+  width: 90%;
+  margin-left: 1.2rem;
+  margin-top: -5px;
+}

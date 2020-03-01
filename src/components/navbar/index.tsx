@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import * as styles from './navbar.module.css';
-import { setSyntheticTrailingComments } from 'typescript';
 
 const Index: React.FunctionComponent<{}> = () => {
   const [display, setDisplay]: any = React.useState(false);
