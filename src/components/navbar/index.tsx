@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import * as styles from './navbar.module.css';
+import { setSyntheticTrailingComments } from 'typescript';
 
 const Index: React.FunctionComponent<{}> = () => {
   const [display, setDisplay]: any = React.useState(false);
@@ -57,12 +58,12 @@ const Index: React.FunctionComponent<{}> = () => {
   return (
     <div className={styles.placeholder}>
       <nav className={styles.nav}>
-        <Link to="login" className={styles.navLinkOne} ref={linkRef}>
+        <NavLink to="login" className={styles.navLinkOne} ref={linkRef}>
           Login
-        </Link>
-        <Link to="signup" className={styles.navLinkTwo} ref={linkRefTwo}>
+        </NavLink>
+        <NavLink to="signup" className={styles.navLinkTwo} ref={linkRefTwo}>
           Signup
-        </Link>
+        </NavLink>
         <div className={styles.menu} onClick={() => clickHandler()}>
           <div className={styles.bar} ref={barOne} />
           <div className={styles.bar} ref={barTwo} />
@@ -70,12 +71,26 @@ const Index: React.FunctionComponent<{}> = () => {
         </div>
         <div className={styles.dropdown} ref={dropRef}>
           <span className={styles.dropdownContainer}>
-            <span>
-              <Link to="signup" className={styles.dropdownLink} />
-            </span>
-            <span>
-              <Link to="login" className={styles.dropdownLink} />
-            </span>
+            <div className={styles.dropdownLinkDiv}>
+              <span className={styles.dropdownLinkSpan}>
+                <NavLink to="/" className={styles.dropdownLink} activeClassName={styles.active}>
+                  Home
+                </NavLink>
+              </span>
+              <span className={styles.dropdownLinkSpan}>
+                <NavLink to="login" className={styles.dropdownLink} activeClassName={styles.active}>
+                  Login
+                </NavLink>
+              </span>
+              <span className={styles.dropdownLinkSpan}>
+                <NavLink
+                  to="signup"
+                  className={styles.dropdownLink}
+                  activeClassName={styles.active}>
+                  Signup
+                </NavLink>
+              </span>
+            </div>
           </span>
         </div>
       </nav>
