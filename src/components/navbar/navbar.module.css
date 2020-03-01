@@ -78,9 +78,9 @@
   height: 50px;
   width: 50px;
   position: absolute;
-  top: 0;
+  top: 12.5px;
+  right: 15px;
   cursor: pointer;
-  right: 0;
   z-index: 100;
 }
 
@@ -93,7 +93,8 @@
   display: flex;
   margin: 6.5px;
   transition: all 0.4s ease;
-  top: 10px;
+  top: 5px;
+  margin-right: 0.85rem;
   z-index: 100;
 }
 
@@ -106,14 +107,16 @@
   top: 0;
 }
 /*MEDIA*/
-/* @media screen and (max-width: 414px) {
-  .logoContainer {
-    background: url('../../assets/RecipeBook-2.png') no-repeat;
-    margin-left: -80px;
-    margin-top: -78px;
-    width: 100%;
+@media screen and (min-width: 1300px) {
+  .menu {
+    top: 12.5px;
+    right: 10px;
   }
-} */
+  .bar {
+    top: 12.5px;
+    right: 10px;
+  }
+}
 /*ANIMATIONS*/
 @keyframes dropFromTop {
   0% {

@@ -1,7 +1,9 @@
 {
-  "name": "Project",
+  "name": "RecipeBook",
+  "author": "Zach Donnelly",
+  "license": "MIT",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "webpack-dev": "webpack-dev-server --env.mode=development",
     "webpack": "webpack",
@@ -14,15 +16,12 @@
     "prod:debug": "yarn run debug --env.mode production",
     "dev:debug": "yarn run debug --env.mode development"
   },
-  "author": "Zach Donnelly",
-  "license": "MIT",
   "dependencies": {
-    "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-lazyload": "^2.6.5",
-    "react-router": "^5.1.2",
-    "react-router-dom": "^5.1.2"
+    "react-router": "^6.0.0-alpha.2",
+    "react-router-dom": "^6.0.0-alpha.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

@@ -8,7 +8,7 @@ import Landing from './pages/landing';
 
 const Routes: React.FunctionComponent<{}> = () => (
   <Router>
-    <Route exact path="/" component={Landing} />
+    <Route path="/" element={<Landing />} />
   </Router>
 );
 

@@ -2,11 +2,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 16px;
-  background-color: #f4f5f7;
+  background-color: rgb(244, 245, 247);
   height: 100%;
   width: 100%;
   overflow-x: hidden !important;
   font-stretch: 100%;
   -webkit-font-smoothing: antialiased;
 }
-/* rgb(244, 245, 247); */

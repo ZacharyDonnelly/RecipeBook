@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as styles from './index.css';
+import * as styles from './navbar.module.css';
 
 const Index: React.FunctionComponent<{}> = () => {
   const [display, setDisplay]: any = React.useState(false);
