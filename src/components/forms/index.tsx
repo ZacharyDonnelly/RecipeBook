@@ -6,14 +6,14 @@ import * as styles from './form.module.css';
 
 interface FormProps {
   option?: Boolean;
-  route: string;
-  clickHandler: any;
-  btnText: string;
+  route?: string;
+  clickHandler?: any;
+  btnText?: string;
   Field?: any;
-  linkContent: string;
-  action: any;
-  dispatch: any;
-  secondAction: any;
+  linkContent?: string;
+  action?: any;
+  dispatch?: any;
+  secondAction?: any;
   thirdAction?: any;
 }
 

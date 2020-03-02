@@ -40,11 +40,9 @@
   font-weight: 500;
   margin-left: 0.45rem;
   margin-top: 5rem;
-  font-family: 'lato', sans-serif;
 }
 
 .sub {
-  font-family: 'lato', sans-serif;
   margin-top: 1rem;
   font-size: 26px;
   margin-bottom: 0.65rem;
@@ -126,7 +124,7 @@
   z-index: inherit;
   text-decoration: none;
   padding-left: 1rem;
-  font-family: Gotham XNarrow, sans-serif;
+  font-family: 'Gotham XNarrow', sans-serif;
   color: #000;
   font-size: 22px;
   font-weight: 500;
@@ -163,7 +161,7 @@
   .navLinkTwo {
     display: block;
     text-decoration: none !important;
-    font-family: Gotham XNarrow, sans-serif !important;
+    font-family: 'Gotham XNarrow', sans-serif !important;
     font-weight: 500 !important;
     font-size: 24px !important;
     cursor: pointer !important;

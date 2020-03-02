@@ -10,9 +10,9 @@
 }
 .kitchenHeader {
   color: #fff;
-  font-family: proxima nova, sans-serif;
+  font-family: 'proxima nova', sans-serif;
   font-size: 32px;
-  font-weight: 500;
+  font-weight: bold;
   margin-top: 10rem;
   margin-bottom: -10rem;
   margin-left: 5.85rem;
@@ -20,7 +20,7 @@
 .kitchenList {
   text-decoration: none;
   list-style: none;
-  font-family: proxima nova, sans-serif;
+  font-family: 'proxima nova', sans-serif;
   display: flex;
   flex-direction: column;
   margin-left: 3.5rem;
@@ -53,7 +53,7 @@
     left: 43rem;
   }
   .kitchenHeader {
-    margin-left: 46rem;
+    margin-left: 50.5rem;
   }
 }
 
