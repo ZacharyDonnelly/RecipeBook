@@ -1,11 +1,12 @@
 .hero {
   display: block;
+  overflow-x: hidden;
   height: 400px;
   width: 100vw !important;
   margin-top: -3.75rem;
   margin-right: 150px;
   overflow-x: hidden !important;
-  padding-top: 18rem;
+  padding-top: 18rem !important;
   background: linear-gradient(rgba(232, 232, 232, 0), rgba(0, 0, 0, 0.8)),
     url('../../assets/images/hero.jpg') no-repeat 0 0;
   background-size: cover;
@@ -22,11 +23,11 @@
   font-weight: 400;
   margin-left: 0.2rem;
   margin-top: 4.5rem;
-  font-family: proxima nova, sans-serif;
+  font-family: 'proxima nova', sans-serif;
 }
 
 .sub {
-  font-family: proxima nova, sans-serif;
+  font-family: 'proxima nova', sans-serif;
   margin-top: 1rem;
   font-size: 26px;
   margin-bottom: 0.65rem;
@@ -38,15 +39,15 @@
 .btn {
   margin-top: 3.5rem;
   border: 3px solid #d95526;
-  margin-left: 3.8rem;
+  margin-left: 3.25rem;
   background-color: transparent;
   width: 210px;
   outline: none;
   text-transform: capitalize;
   height: 43px;
   font-size: 17px;
-  font-family: proxima nova, sans-serif;
-  font-weight: 500;
+  font-family: 'proxima nova', sans-serif;
+  font-weight: 400;
   color: #fff;
 }
 

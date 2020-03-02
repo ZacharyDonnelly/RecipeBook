@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { emailAction, passAction } from '../../components/actions';
 import * as styles from './login.module.css';
 
 const Form = React.lazy(() => import(/* webpackChunkName: "Login-Form"*/ '../../components/forms'));
@@ -16,6 +18,8 @@ const Index: React.FunctionComponent<{}> = () => (
         <Form
           route="signup"
           btnText="Login"
+          action={emailAction}
+          secondAction={passAction}
           clickHandler={handleClick}
           linkContent="Don't have an account? Click here to sign up"
         />
@@ -26,5 +30,9 @@ const Index: React.FunctionComponent<{}> = () => (
 const handleClick = () => {
   alert('click');
 };
+const mapStateToProps = (state: { email: string; pass: string }) => ({
+  email: state.email,
+  pass: state.pass,
+});
 
-export default Index;
+export default connect(mapStateToProps)(Index);

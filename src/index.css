@@ -1,3 +1,23 @@
+@font-face {
+  font-family: 'proxima nova';
+  src: url('./assets/fonts/proximanova-regular-webfont.woff2') format('woff2'),
+    url('./assets/fonts/proximanova-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'proxima nova';
+  src: url('./assets/fonts/proximanova-bold-webfont.woff2') format('woff2'),
+    url('./assets/fonts/proximanova-bold-webfont.woff') format('woff');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Gotham XNarrow';
+  src: url('./assets/fonts/GothamXNarrow-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -8,4 +28,24 @@ body {
   overflow-x: hidden !important;
   font-stretch: 100%;
   -webkit-font-smoothing: antialiased;
+
+  @font-face {
+    font-family: 'proxima nova';
+    src: url('./assets/fonts/proximanova-regular-webfont.woff2') format('woff2'),
+      url('./assets/fonts/proximanova-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'proxima nova';
+    src: url('./assets/fonts/proximanova-bold-webfont.woff2') format('woff2'),
+      url('./assets/fonts/proximanova-bold-webfont.woff') format('woff');
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: 'Gotham XNarrow';
+    src: url('./assets/fonts/GothamXNarrow-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
 }

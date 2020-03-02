@@ -11,15 +11,15 @@
 }
 .personalizeHeader {
   color: #fff;
-  font-family: proxima nova, sans-serif;
+  font-family: 'proxima nova', sans-serif;
   font-size: 32px;
-  font-weight: 500;
+  font-weight: bold;
   margin-top: -12rem;
   margin-bottom: 15rem;
-  margin-left: 7rem;
+  margin-left: 6.5rem;
 }
 .personalizeSubHeader {
-  font-family: proxima nova, sans-serif;
+  font-family: 'proxima nova', sans-serif;
   font-size: 22px;
   font-weight: bold;
   margin: -2.5em 0 1em 6rem;
@@ -30,10 +30,10 @@
   color: #7d8485;
   font-size: 18px;
   line-height: 27px;
-  font-family: proxima nova, sans-serif;
+  font-family: 'proxima nova', sans-serif;
 }
 .btn {
-  margin: 1rem 0 0 5rem;
+  margin: 1rem 0 0 3.5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
   background-color: #ff7452;
@@ -43,7 +43,7 @@
   text-transform: capitalize;
   height: 40px;
   font-size: 17px;
-  font-family: Gotham XNarrow, sans-serif;
+  font-family: 'Gotham XNarrow', sans-serif;
   font-weight: 500;
   color: #333;
 }
@@ -55,17 +55,17 @@
 @media screen and (min-width: 1300px) {
   .personalizeHeader {
     font-size: 42px;
-    margin-left: 45rem;
+    margin-left: 51rem;
   }
   .personalizeSubHeader {
-    margin-left: 47rem;
+    margin-left: 52.5rem;
   }
   .personalizeDescription {
-    margin: 1em 0 1.5em 39.5rem;
+    margin: 1em 0 1.5em 44rem;
     width: 25%;
   }
   .btn {
-    margin-left: 44rem;
+    margin-left: 49.5rem;
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 800px) {

@@ -32,6 +32,10 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) =>
             ],
           },
           {
+            test: /\.(woff|woff2)$/,
+            use: ['file-loader'],
+          },
+          {
             test: /\.tsx?$/,
             loader: 'awesome-typescript-loader',
             exclude: /node_modules/,

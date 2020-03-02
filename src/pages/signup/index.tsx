@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { emailAction, passAction, confirmAction } from '../../components/actions';
 import * as styles from './signup.module.css';
 
 const Form = React.lazy(() =>
@@ -21,6 +23,9 @@ const Index: React.FunctionComponent<{}> = () => (
         <Form
           route="login"
           btnText="Signup"
+          action={emailAction}
+          secondAction={passAction}
+          thirdAction={confirmAction}
           clickHandler={handleClick}
           Field={Safety}
           linkContent="Already have an account? Click here to sign in"
@@ -33,5 +38,10 @@ const Index: React.FunctionComponent<{}> = () => (
 const handleClick = () => {
   alert('click');
 };
+const mapStateToProps = (state: { email: string; pass: string; confirm: string }) => ({
+  email: state.email,
+  pass: state.pass,
+  confirm: state.confirm,
+});
 
-export default Index;
+export default connect(mapStateToProps)(Index);
