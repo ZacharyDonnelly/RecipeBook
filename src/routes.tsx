@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import createStore from '../src/components/store';
 import Landing from './pages/landing';
 
 // const Landing: React.FunctionComponent<{}> = React.lazy(() =>
@@ -11,17 +13,20 @@ const Login: React.FunctionComponent<{}> = React.lazy(() =>
 const Signup: React.FunctionComponent<{}> = React.lazy(() =>
   import(/* webpackChunkName: "Signup"*/ './pages/signup'),
 );
+const store = createStore();
 const Loading = setTimeout(() => 500) ? null : 'Loading';
 const MainRoutes: React.FunctionComponent<{}> = () => (
-  <Routes>
-    <Route path="/" element={<Landing />} />
-    <React.Suspense fallback={Loading}>
-      <Route path="login" element={<Login />} />
-    </React.Suspense>
-    <React.Suspense fallback={Loading}>
-      <Route path="signup" element={<Signup />} />
-    </React.Suspense>
-  </Routes>
+  <Provider store={store}>
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <React.Suspense fallback={Loading}>
+        <Route path="login" element={<Login />} />
+      </React.Suspense>
+      <React.Suspense fallback={Loading}>
+        <Route path="signup" element={<Signup />} />
+      </React.Suspense>
+    </Routes>
+  </Provider>
 );
 
 export default MainRoutes;
