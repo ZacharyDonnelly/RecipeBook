@@ -13,7 +13,12 @@ const Index: React.FunctionComponent<{}> = () => (
       <h3 className={styles.cardHeader}>Welcome</h3>
       <h3 className={styles.cardSubHeader}>Enjoy your stay!</h3>
       <div className={styles.cardMain}>
-        <Form route="signup" btnText="Login" clickHandler={handleClick} />
+        <Form
+          route="signup"
+          btnText="Login"
+          clickHandler={handleClick}
+          linkContent="Don't have an account? Click here to sign up"
+        />
       </div>
     </div>
   </>

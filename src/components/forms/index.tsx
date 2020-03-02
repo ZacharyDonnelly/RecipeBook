@@ -8,6 +8,7 @@ interface FormProps {
   clickHandler: any;
   btnText: string;
   Field?: any;
+  linkContent: string;
 }
 
 const Logo = React.lazy(() => import(/* webpackChunkName: "Logo" */ '../../assets/svg/logosvg'));
@@ -26,6 +27,7 @@ const Form: React.FunctionComponent<FormProps> = ({
   clickHandler,
   btnText,
   Field,
+  linkContent,
 }) => (
   <form className={styles.form} onSubmit={e => handleSubmit(e)}>
     <div className="login-svg">
@@ -50,7 +52,7 @@ const Form: React.FunctionComponent<FormProps> = ({
       </div>
     ) : null}
     <Link to={route} rel="prefetch" className={styles.link}>
-      Don&apos;t have an account? Click here to sign up
+      {linkContent}
     </Link>
     <div className={styles.control}>
       <button className={styles.btn} onClick={() => clickHandler()}>

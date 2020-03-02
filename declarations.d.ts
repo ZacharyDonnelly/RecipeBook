@@ -7,3 +7,4 @@ declare module '*.css' {
 }
 
 declare module 'react-lazyload';
+declare module 'react-router-dom';

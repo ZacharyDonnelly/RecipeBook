@@ -18,7 +18,14 @@ const Index: React.FunctionComponent<{}> = () => (
       <h3 className={styles.cardHeader}>Welcome</h3>
       <h3 className={styles.cardSubHeader}>Enjoy your stay!</h3>
       <div className={styles.cardMain}>
-        <Form route="login" btnText="Signup" clickHandler={handleClick} Field={Safety} option />
+        <Form
+          route="login"
+          btnText="Signup"
+          clickHandler={handleClick}
+          Field={Safety}
+          linkContent="Already have an account? Click here to sign in"
+          option
+        />
       </div>
     </div>
   </>
