@@ -41,11 +41,9 @@
   background: transparent;
 }
 .btn:active {
-  background: linear-gradient(
-    90deg,
-    rgba(68, 68, 68, 1) 0%,
-    rgba(247, 148, 29, 0.6222864145658263) 47%
-  );
+  background: #093028;
+  background: -webkit-linear-gradient(to right, #093028, #237a57);
+  background: linear-gradient(to right, #093028, #237a57);
 }
 
 .link {

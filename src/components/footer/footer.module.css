@@ -3,14 +3,14 @@
   height: 125px;
   width: 100%;
   position: relative;
-  background-color: #333;
-  color: white;
+  background-color: var(--footer-color);
+  color: #000;
   line-height: inherit;
   display: block;
   border-top: 1px solid #999;
 }
 .subHeader {
-  color: #fff;
+  color: #000;
   font-size: 19px;
   font-family: 'Gotham XNarrow', sans-serif;
   margin-left: 5.25rem;
@@ -49,14 +49,14 @@
 @media screen and (min-width: 1300px) {
   .social {
     bottom: 5rem;
-    left: 45rem;
+    left: 49.5rem;
   }
   .footer {
     padding-bottom: 10px;
   }
   .copyright {
     bottom: 1rem;
-    left: 42.25rem;
+    left: 46.5rem;
   }
 }
 /*IPAD PRO*/

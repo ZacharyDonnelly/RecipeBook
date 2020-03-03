@@ -35,7 +35,7 @@ const CallToAction = () => {
           </div>
           <div className={styles.svgThree} style={{ margin: '0 !important' }}>
             <h5 className={styles.svgHeaderThree}>Kitchen Helper</h5>
-            <Recipes />
+            <Recipes width="84px" />
           </div>
         </div>
       </React.Suspense>

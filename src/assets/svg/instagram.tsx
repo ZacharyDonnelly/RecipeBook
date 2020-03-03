@@ -4,7 +4,7 @@ const Insta = () => (
   <svg
     width="28px"
     height="28px"
-    fill="#fff"
+    fill="#000"
     version="1.1"
     viewBox="0 0 169.063 169.063"
     x="0px"
