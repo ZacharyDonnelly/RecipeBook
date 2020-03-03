@@ -16,6 +16,9 @@ const Signup: React.FunctionComponent<{}> = React.lazy(() =>
 const Selection: React.FunctionComponent<{}> = React.lazy(() =>
   import(/* webpackChunkName: "Selection"*/ '../src/pages/selection'),
 );
+const Recipes: React.FunctionComponent<{}> = React.lazy(() =>
+  import(/* webpackChunkName: "Existing-Recipes"*/ './pages/recipes'),
+);
 const store = createStore();
 const Loading = setTimeout(() => 500) ? null : 'Loading';
 const MainRoutes: React.FunctionComponent<{}> = () => (
@@ -30,6 +33,9 @@ const MainRoutes: React.FunctionComponent<{}> = () => (
       </React.Suspense>
       <React.Suspense fallback={Loading}>
         <Route path="selection" element={<Selection />} />
+      </React.Suspense>
+      <React.Suspense fallback={Loading}>
+        <Route path="recipes" element={<Recipes />} />
       </React.Suspense>
     </Routes>
   </Provider>

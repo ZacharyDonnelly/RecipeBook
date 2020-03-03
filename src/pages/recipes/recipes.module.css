@@ -1,0 +1,80 @@
+/*MAIN*/
+.wrapper {
+  height: auto;
+  background-color: var(--offwhite);
+  padding-top: 0.25rem;
+}
+.header {
+  font-family: 'Gotham XNarrow', serif;
+  font-size: 40px;
+  position: absolute;
+  top: 1rem;
+  left: 4rem;
+}
+.container {
+  overflow-x: hidden !important;
+  background-color: var(--offwhite);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 5rem 0 0 3.5rem;
+}
+.itemDiv {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  padding: 0.25rem 0;
+}
+.itemHeader {
+  margin-top: 0.25rem;
+  margin-left: 0;
+  font-family: 'Gotham XNarrow', serif;
+}
+/*TEMPLATE*/
+.templateContainer {
+  height: 100px;
+  width: 100px;
+  display: block;
+}
+
+/*MEDIA*/
+@media screen and (min-width: 1300px) {
+  .wrapper {
+    height: 100%;
+  }
+  .container {
+    width: 25%;
+    overflow: hidden;
+    margin: 15rem 0 0 42rem;
+  }
+  .header {
+    top: 5rem;
+    left: 45rem;
+  }
+}
+@media screen and (max-width: 1024px) and (min-height: 1366px) {
+  .container {
+    width: 45%;
+    margin: 12.5rem 0 0 21rem;
+  }
+  .header {
+    left: 24rem;
+  }
+}
+@media screen and (max-width: 768px) and (min-height: 1024px) {
+  .container {
+    width: 55%;
+    margin: 10rem 0 0 12rem;
+  }
+  .header {
+    left: 16rem;
+  }
+}
+@media screen and (min-width: 414px) and (max-height: 736px) {
+  .container {
+    margin: 5rem 0 0 4.5rem;
+  }
+  .header {
+    left: 5rem;
+  }
+}
