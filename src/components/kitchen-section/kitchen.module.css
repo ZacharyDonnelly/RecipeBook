@@ -35,7 +35,7 @@
 .kitchenItem::before {
   content: '\2713';
   position: absolute;
-  left: 32.5px;
+  left: 30px;
   font-size: 24px;
   color: #34a835;
 }
@@ -50,7 +50,7 @@
     margin: 0.8em 0;
   }
   .kitchenItem::before {
-    left: 43rem;
+    left: 42rem;
   }
   .kitchenHeader {
     margin-left: 50.5rem;

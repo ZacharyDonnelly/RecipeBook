@@ -1,5 +1,5 @@
 .formLink {
-  color: #fff;
+  color: #000;
   font-family: 'Gotham XNarrow', sans-serif;
   font-size: 28px;
   position: absolute;
@@ -14,9 +14,7 @@
 }
 .container {
   overflow-x: hidden !important;
-  background: #093028;
-  background: -webkit-linear-gradient(to right, #093028, #237a57);
-  background: linear-gradient(to right, #093028, #237a57);
+  background: var(--offwhite);
   opacity: 0.7;
   background-size: 500% 500%;
   transition: background 3s ease;
@@ -63,9 +61,9 @@
   padding: 1.25rem;
 }
 .cardHeader {
-  color: #fff;
+  color: #000;
   font-size: 28px;
-  font-family: 'Gotham XNarrow', sans-serif;
+  font-family: 'Gotham XNarrow', serif;
   font-weight: bold;
   position: absolute;
   top: 1%;
@@ -92,7 +90,7 @@
   }
   .cardMain {
     left: 19%;
-    width: 450px;
+    width: 460px;
   }
   .cardHeader {
     font-size: 36px;

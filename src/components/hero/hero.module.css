@@ -38,7 +38,7 @@
 
 .btn {
   margin-top: 3.5rem;
-  border: 3px solid #d95526;
+  border: 3px solid var(--button-border);
   margin-left: 3.25rem;
   background-color: transparent;
   width: 210px;
