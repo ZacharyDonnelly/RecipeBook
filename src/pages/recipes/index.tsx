@@ -1,77 +1,141 @@
 import * as React from 'react';
 import Template from './template';
 import * as styles from './recipes.module.css';
-import Pasta from '../../assets/svg/categories/pasta';
-import Seafood from '../../assets/svg/categories/seafood';
-import Burgers from '../../assets/svg/categories/burgers';
-import Breakfast from '../../assets/svg/categories/breakfast';
-import Lunch from '../../assets/svg/categories/lunch';
-import Dinner from '../../assets/svg/categories/dinner';
-import Dessert from '../../assets/svg/categories/dessert';
-import Sweets from '../../assets/svg/categories/sweets';
-import Icecream from '../../assets/svg/categories/icecream';
-import Salad from '../../assets/svg/categories/salad';
-import Starters from '../../assets/svg/categories/starters';
-import Drinks from '../../assets/svg/categories/drinks';
-import Bakery from '../../assets/svg/categories/bakery';
-import Cakes from '../../assets/svg/categories/cakes';
-import Soups from '../../assets/svg/categories/soups';
-import Cookies from '../../assets/svg/categories/cookies';
+const Pasta = React.lazy(() =>
+  import(/*webpackChunkName: "Pasta-svg"*/ '../../assets/svg/categories/pasta'),
+);
+const Seafood = React.lazy(() =>
+  import(/*webpackChunkName: "Seafood-svg"*/ '../../assets/svg/categories/seafood'),
+);
+const Burgers = React.lazy(() =>
+  import(/*webpackChunkName: "Burgers-svg"*/ '../../assets/svg/categories/burgers'),
+);
+const Breakfast = React.lazy(() =>
+  import(/*webpackChunkName: "Breakfast-svg"*/ '../../assets/svg/categories/breakfast'),
+);
+const Lunch = React.lazy(() =>
+  import(/*webpackChunkName: "Lunch-svg"*/ '../../assets/svg/categories/lunch'),
+);
+const Dinner = React.lazy(() =>
+  import(/*webpackChunkName: "Dinner-svg"*/ '../../assets/svg/categories/dinner'),
+);
+const Dessert = React.lazy(() =>
+  import(/*webpackChunkName: "Dessert-svg"*/ '../../assets/svg/categories/dessert'),
+);
+const Sweets = React.lazy(() =>
+  import(/*webpackChunkName: "Sweets-svg"*/ '../../assets/svg/categories/sweets'),
+);
+const Icecream = React.lazy(() =>
+  import(/*webpackChunkName: "Icecream-svg"*/ '../../assets/svg/categories/icecream'),
+);
+const Salad = React.lazy(() =>
+  import(/*webpackChunkName: "Salad-svg"*/ '../../assets/svg/categories/salad'),
+);
+const Starters = React.lazy(() =>
+  import(/*webpackChunkName: "Starters-svg"*/ '../../assets/svg/categories/starters'),
+);
+const Drinks = React.lazy(() =>
+  import(/*webpackChunkName: "Drinks-svg"*/ '../../assets/svg/categories/drinks'),
+);
+const Bakery = React.lazy(() =>
+  import(/*webpackChunkName: "Bakery-svg"*/ '../../assets/svg/categories/bakery'),
+);
+const Cakes = React.lazy(() =>
+  import(/*webpackChunkName: "Cakes-svg"*/ '../../assets/svg/categories/cakes'),
+);
+const Soups = React.lazy(() =>
+  import(/*webpackChunkName: "Soups-svg"*/ '../../assets/svg/categories/soups'),
+);
+const Cookies = React.lazy(() =>
+  import(/*webpackChunkName: "Cookies-svg"*/ '../../assets/svg/categories/cookies'),
+);
 
 const Recipes: React.FunctionComponent<{}> = () => {
+  const Loading = setTimeout(() => 500) ? null : 'Loading';
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.header}>Food Categories</h1>
       <div className={styles.container}>
-        <div className={styles.itemDiv}>
-          <Template name="Pasta" svg={<Pasta />} route="pasta" />
-        </div>
-        <div className={styles.itemDiv}>
-          <Template name="Seafood" svg={<Seafood />} route="seafood" />
-        </div>
-        <div className={styles.itemDiv}>
-          <Template name="Burgers" svg={<Burgers />} route="burgers" />
-        </div>
-
-        <div className={styles.itemDiv}>
-          <Template name="Breakfast" svg={<Breakfast />} route="breakfast" />
-        </div>
-        <div className={styles.itemDiv}>
-          <Template name="Lunch" svg={<Lunch />} route="lunch" />
-        </div>
-        <div className={styles.itemDiv}>
-          <Template name="Dinner" svg={<Dinner />} route="dinner" />
-        </div>
-        <div className={styles.itemDiv}>
-          <Template name="Dessert" svg={<Dessert />} route="dessert" />
-        </div>
-        <div className={styles.itemDiv}>
-          <Template name="Starters" svg={<Starters />} route="starters" />
-        </div>
-        <div className={styles.itemDiv}>
-          <Template name="Soups" svg={<Soups />} route="soups" />
-        </div>
-        <div className={styles.itemDiv}>
-          <Template name="Salad" svg={<Salad />} route="salad" />
-        </div>
-        <div className={styles.itemDiv}>
-          <Template name="Beverages" svg={<Drinks />} route="drinks" />
-        </div>
-        <div className={styles.itemDiv}>
-          <Template name="Sweets" svg={<Sweets />} route="sweets" />
-        </div>
-        <div className={styles.itemDiv}>
-          <Template name="Icecream" svg={<Icecream />} route="icecream" />
-        </div>
-        <div className={styles.itemDiv}>
-          <Template name="Bakery" svg={<Bakery />} route="bakery" />
-        </div>
-        <div className={styles.itemDiv}>
-          <Template name="Cakes" svg={<Cakes />} route="cakes" />
-        </div>
-        <div className={styles.itemDiv}>
-          <Template name="Cookies" svg={<Cookies />} route="cookies" />
-        </div>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Pasta" icon={<Pasta />} route="pasta" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Seafood" icon={<Seafood />} route="seafood" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Burgers" icon={<Burgers />} route="burgers" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Breakfast" icon={<Breakfast />} route="breakfast" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Lunch" icon={<Lunch />} route="lunch" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Dinner" icon={<Dinner />} route="dinner" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Dessert" icon={<Dessert />} route="dessert" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Starters" icon={<Starters />} route="starters" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Soups" icon={<Soups />} route="soups" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Salad" icon={<Salad />} route="salad" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Beverages" icon={<Drinks />} route="drinks" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Sweets" icon={<Sweets />} route="sweets" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Icecream" icon={<Icecream />} route="icecream" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Bakery" icon={<Bakery />} route="bakery" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Cakes" icon={<Cakes />} route="cakes" />
+          </div>
+        </React.Suspense>
+        <React.Suspense fallback={Loading}>
+          <div className={styles.itemDiv}>
+            <Template name="Cookies" icon={<Cookies />} route="cookies" />
+          </div>
+        </React.Suspense>
       </div>
     </div>
   );

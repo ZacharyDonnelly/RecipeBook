@@ -4,14 +4,14 @@ import * as styles from './recipes.module.css';
 
 interface TemplateProps {
   name: string;
-  svg: object;
+  icon: object;
   route: string;
 }
-const Template: React.FunctionComponent<TemplateProps> = ({ name, svg, route }) => {
+const Template: React.FunctionComponent<TemplateProps> = ({ name, icon, route }) => {
   const navigate = useNavigate();
   return (
     <div className={styles.templateContainer} onClick={() => navigate(route)}>
-      {svg}
+      {icon}
       <h5 className={styles.itemHeader}>{name}</h5>
     </div>
   );
