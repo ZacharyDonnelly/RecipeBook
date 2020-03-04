@@ -9,7 +9,19 @@
   font-size: 40px;
   position: absolute;
   top: 1rem;
-  left: 4rem;
+  left: 8rem;
+}
+.btn {
+  background-color: transparent;
+  position: absolute;
+  top: 4.5rem;
+  left: 3.5rem;
+  border: 2.5px solid var(--footer-color);
+  font-family: 'Gotham XNarrow', serif;
+  font-size: 18px;
+  width: 250px;
+  color: #000;
+  padding: 0.5rem 0;
 }
 .container {
   overflow-x: hidden !important;
@@ -17,7 +29,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin: 5rem 0 0 3.5rem;
+  margin: 8.75rem 0 0 3.5rem;
 }
 .itemDiv {
   display: flex;
@@ -42,39 +54,68 @@
   .wrapper {
     height: 100%;
   }
+  .header {
+    top: 5rem;
+    left: 49rem;
+  }
+  .btn {
+    top: 9rem;
+    left: 45rem;
+  }
   .container {
     width: 25%;
     overflow: hidden;
-    margin: 15rem 0 0 42rem;
-  }
-  .header {
-    top: 5rem;
-    left: 45rem;
+    margin: 15rem 0 0 42.5rem;
   }
 }
 @media screen and (max-width: 1024px) and (min-height: 1366px) {
+  .wrapper {
+    height: 100vh;
+  }
+  .btn {
+    left: 23.5rem;
+  }
   .container {
     width: 45%;
     margin: 12.5rem 0 0 21rem;
   }
   .header {
-    left: 24rem;
+    left: 28rem;
   }
 }
 @media screen and (max-width: 768px) and (min-height: 1024px) {
+  .wrapper {
+    height: 100vh;
+  }
+  .btn {
+    left: 15rem;
+  }
   .container {
     width: 55%;
     margin: 10rem 0 0 12rem;
   }
   .header {
-    left: 16rem;
+    left: 19rem;
   }
 }
+
 @media screen and (min-width: 414px) and (max-height: 736px) {
   .container {
-    margin: 5rem 0 0 4.5rem;
+    margin-left: 4.95rem;
   }
   .header {
-    left: 5rem;
+    left: 9rem;
+  }
+  .btn {
+    left: 4.85rem;
+  }
+  .wrapper {
+    padding-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 410px) {
+  .wrapper {
+    height: 100vh;
+    padding-bottom: 7.35rem;
   }
 }

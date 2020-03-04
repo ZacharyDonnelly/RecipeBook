@@ -1,0 +1,110 @@
+.wrapper {
+  background-color: #f4f5f7;
+  padding-top: 3rem;
+  height: 100%;
+}
+.container {
+  margin: 1.75rem 3rem;
+}
+.header {
+  color: #000;
+  font-size: 36px;
+  font-family: 'Gotham XNarrow', serif;
+  margin-bottom: 1.5rem;
+}
+/*INPUTS*/
+.title,
+.cookTime,
+.textArea {
+  width: 250px;
+  border: 2px solid #ddd;
+  border-radius: 0;
+  color: #999;
+  display: block;
+  font-family: 'proxima nova', sans-serif;
+  font-weight: 500;
+  margin: 0 0 0.5em;
+  padding: 1em 1.25em;
+  transition: border-color 300ms, color 300ms;
+  -webkit-appearance: none;
+  margin-bottom: 2.5rem;
+}
+.textArea {
+  min-height: 7.5em;
+  line-height: 1.5;
+  overflow: auto;
+  resize: vertical;
+}
+.textArea:focus,
+.title:focus,
+.cookTime:focus {
+  border-color: var(--button-border);
+  color: #333;
+  outline: none;
+}
+
+.submitBtn {
+  background: #333;
+  color: #fff;
+  display: block;
+  float: left;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 1.5em 1.125em;
+  text-align: center;
+  text-decoration: none;
+  transition: background 300ms;
+  width: 55%;
+  margin-left: 0.5rem;
+}
+
+/*MEDIA*/
+@media screen and (min-width: 1300px) {
+  .container {
+    margin: 12.5rem 45rem;
+  }
+  .btn {
+    width: 45%;
+  }
+  .title,
+  .cookTime,
+  .textArea {
+    width: 425px;
+  }
+}
+@media screen and (max-width: 1024px) and (min-height: 1366px) {
+  .container {
+    margin: 20rem;
+  }
+  .btn {
+    width: 45%;
+  }
+  .title,
+  .cookTime,
+  .textArea {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 768px) and (min-height: 1024px) {
+  .container {
+    margin: 12rem;
+  }
+  .btn {
+    width: 45%;
+  }
+  .title,
+  .cookTime,
+  .textArea {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 414px) and (min-width: 405px) and (min-height: 736px) {
+  .container {
+    margin: 2rem 4rem;
+  }
+  .title,
+  .cookTime,
+  .textArea {
+    width: 275px;
+  }
+}

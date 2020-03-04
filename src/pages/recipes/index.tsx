@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Template from './template';
 import * as styles from './recipes.module.css';
 const Pasta = React.lazy(() =>
@@ -51,10 +52,14 @@ const Cookies = React.lazy(() =>
 );
 
 const Recipes: React.FunctionComponent<{}> = () => {
+  const navigate = useNavigate();
   const Loading = setTimeout(() => 500) ? null : 'Loading';
   return (
     <div className={styles.wrapper}>
-      <h1 className={styles.header}>Food Categories</h1>
+      <h1 className={styles.header}>Recipes</h1>
+      <button className={styles.btn} onClick={() => navigate('create')}>
+        Create New
+      </button>
       <div className={styles.container}>
         <React.Suspense fallback={Loading}>
           <div className={styles.itemDiv}>

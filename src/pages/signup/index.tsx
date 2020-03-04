@@ -12,7 +12,7 @@ const Safety = React.lazy(() =>
 );
 const Index: React.FunctionComponent<{}> = () => {
   const navigate = useNavigate();
-  const handleClick = () => navigate('selection');
+  const handleClick = () => navigate('recipes');
   return (
     <>
       <Link to="/" className={styles.formLink}>
