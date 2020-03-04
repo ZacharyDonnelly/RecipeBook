@@ -60,7 +60,7 @@
   }
 }
 /*IPAD PRO*/
-@media screen and (min-width: 1024px) and (max-height: 1366px) and (min-height: 1300px) {
+@media screen and (max-width: 1024px) and (min-width: 1014px) {
   .social {
     bottom: 5rem;
     left: 25rem;
