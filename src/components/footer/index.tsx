@@ -5,7 +5,7 @@ const Facebook = React.lazy(() => import('../../assets/svg/facebook'));
 const Twitter = React.lazy(() => import('../../assets/svg/twitter'));
 const Instagram = React.lazy(() => import('../../assets/svg/instagram'));
 
-const Footer = () => (
+const Footer: React.FC<{}> = () => (
   <footer className={styles.footer}>
     <div className={styles.social}>
       <h5 className={styles.subHeader}>Follow Us</h5>

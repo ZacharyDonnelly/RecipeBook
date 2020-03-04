@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Salad: React.FunctionComponent<{}> = () => (
+const Salad: React.FC<{}> = () => (
   <svg width="45px" height="45px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 217.05 138.43">
     <path
       d="M216.62,396.49c-11.93,6-26.05.62-34.68-19.34s-8.7-47.33,3.22-53.35,31.33,11.59,40,31.55S228.54,390.47,216.62,396.49Z"

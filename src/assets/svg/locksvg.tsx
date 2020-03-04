@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const LockSvg = () => (
+const LockSvg: React.FC<{}> = () => (
   <svg
     viewBox="64 64 896 896"
     width="1em"

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Cakes: React.FunctionComponent<{}> = () => (
+const Cakes: React.FC<{}> = () => (
   <svg height="45px" width="45px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.1 217.05">
     <ellipse
       cx="83.6"

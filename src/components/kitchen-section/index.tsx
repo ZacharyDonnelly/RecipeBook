@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as styles from './kitchen.module.css';
 import LazyLoad from 'react-lazyload';
 
-const Index: React.FunctionComponent = () => (
+const Index: React.FC<{}> = () => (
   <>
     <LazyLoad once>
       <h3 className={styles.kitchenHeader}>Kitchen Helper</h3>

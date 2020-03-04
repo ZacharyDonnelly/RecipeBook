@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Sweets: React.FunctionComponent<{}> = () => (
+const Sweets: React.FC<{}> = () => (
   <svg height="45px" width="45px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116.98 239.2">
     <path
       d="M241.09,292.14c-10.9-1.32-11,.45-18-3.21-12.14-6.35-17.79-18.81-17.79-18.81s13.31-.8,25.17,6.06S249,293.09,241.09,292.14Z"

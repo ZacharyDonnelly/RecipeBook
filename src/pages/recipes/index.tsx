@@ -1,61 +1,65 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Template from './template';
 import * as styles from './recipes.module.css';
-const Pasta = React.lazy(() =>
+
+const Pasta: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Pasta-svg"*/ '../../assets/svg/categories/pasta'),
 );
-const Seafood = React.lazy(() =>
+const Seafood: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Seafood-svg"*/ '../../assets/svg/categories/seafood'),
 );
-const Burgers = React.lazy(() =>
+const Burgers: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Burgers-svg"*/ '../../assets/svg/categories/burgers'),
 );
-const Breakfast = React.lazy(() =>
+const Breakfast: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Breakfast-svg"*/ '../../assets/svg/categories/breakfast'),
 );
-const Lunch = React.lazy(() =>
+const Lunch: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Lunch-svg"*/ '../../assets/svg/categories/lunch'),
 );
-const Dinner = React.lazy(() =>
+const Dinner: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Dinner-svg"*/ '../../assets/svg/categories/dinner'),
 );
-const Dessert = React.lazy(() =>
+const Dessert: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Dessert-svg"*/ '../../assets/svg/categories/dessert'),
 );
-const Sweets = React.lazy(() =>
+const Sweets: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Sweets-svg"*/ '../../assets/svg/categories/sweets'),
 );
-const Icecream = React.lazy(() =>
+const Icecream: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Icecream-svg"*/ '../../assets/svg/categories/icecream'),
 );
-const Salad = React.lazy(() =>
+const Salad: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Salad-svg"*/ '../../assets/svg/categories/salad'),
 );
-const Starters = React.lazy(() =>
+const Starters: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Starters-svg"*/ '../../assets/svg/categories/starters'),
 );
-const Drinks = React.lazy(() =>
+const Drinks: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Drinks-svg"*/ '../../assets/svg/categories/drinks'),
 );
-const Bakery = React.lazy(() =>
+const Bakery: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Bakery-svg"*/ '../../assets/svg/categories/bakery'),
 );
-const Cakes = React.lazy(() =>
+const Cakes: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Cakes-svg"*/ '../../assets/svg/categories/cakes'),
 );
-const Soups = React.lazy(() =>
+const Soups: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Soups-svg"*/ '../../assets/svg/categories/soups'),
 );
-const Cookies = React.lazy(() =>
+const Cookies: React.FC<{}> = React.lazy(() =>
   import(/*webpackChunkName: "Cookies-svg"*/ '../../assets/svg/categories/cookies'),
 );
 
-const Recipes: React.FunctionComponent<{}> = () => {
+const Recipes: React.FC<{}> = () => {
   const navigate = useNavigate();
   const Loading = setTimeout(() => 500) ? null : 'Loading';
   return (
     <div className={styles.wrapper}>
+      <Link to="/" style={{ color: '#000', fontSize: 32, textDecoration: 'none' }}>
+        Home
+      </Link>
       <h1 className={styles.header}>Recipes</h1>
       <button className={styles.btn} onClick={() => navigate('create')}>
         Create New

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import * as styles from './form.module.css';
 
-interface FormProps {
+export interface FormProps {
   option?: Boolean;
   route?: string;
   clickHandler?: any;
@@ -17,16 +17,20 @@ interface FormProps {
   thirdAction?: any;
 }
 
-const Logo = React.lazy(() => import(/* webpackChunkName: "Logo" */ '../../assets/svg/logosvg'));
-const Lock = React.lazy(() => import(/* webpackChunkName: "LockSVG" */ '../../assets/svg/locksvg'));
-const Avatar = React.lazy(() =>
+const Logo: React.FC<{}> = React.lazy(() =>
+  import(/* webpackChunkName: "Logo" */ '../../assets/svg/logosvg'),
+);
+const Lock: React.FC<{}> = React.lazy(() =>
+  import(/* webpackChunkName: "LockSVG" */ '../../assets/svg/locksvg'),
+);
+const Avatar: React.FC<{}> = React.lazy(() =>
   import(/* webpackChunkName: "AviSVG" */ '../../assets/svg/avatarsvg'),
 );
 
 const Black: string = `${styles.input} ${styles.black}`;
 const Orange: string = `${styles.input} ${styles.orange}`;
 
-const Form: React.FunctionComponent<FormProps> = ({
+const Form: React.FC<FormProps> = ({
   option,
   route,
   clickHandler,

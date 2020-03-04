@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Burgers: React.FunctionComponent<{}> = () => (
+const Burgers: React.FC<{}> = () => (
   <svg height="45px" width="45px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 217.05 177.77">
     <path
       d="M370.35,392.32c6.59,0,10.25,4,5.91,9-13.63,15.57-53.5,22.11-100.57,22.11-46.28,0-85.61-7-99.87-21.75-4.74-4.9-1.23-9.33,5.59-9.33Z"

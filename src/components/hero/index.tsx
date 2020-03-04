@@ -3,7 +3,7 @@ import * as styles from './hero.module.css';
 import { useNavigate } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 
-const Index: React.FunctionComponent<{}> = () => {
+const Index: React.FC<{}> = () => {
   const navigate = useNavigate();
   const clickHandler = () => navigate('signup');
   return (

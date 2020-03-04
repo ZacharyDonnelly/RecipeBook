@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Dinner = () => (
+const Dinner: React.FC<{}> = () => (
   <svg height="45px" width="45px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 217.05 217.05">
     <path
       d="M290.21,444.79l88.54-95.16a13.32,13.32,0,1,1,18.85,18.83l-95,88.66c-3.46,3.46-8.74,3.8-12.19.35A9.05,9.05,0,0,1,290.21,444.79Z"

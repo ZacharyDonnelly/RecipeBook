@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const AvatarSvg = () => (
+const AvatarSvg: React.FC<{}> = () => (
   <svg
     viewBox="64 64 896 896"
     focusable="false"
