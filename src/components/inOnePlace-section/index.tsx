@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as styles from './inOnePlace.module.css';
 import LazyLoad from 'react-lazyload';
 
-const Index: React.FunctionComponent = () => (
+const Index: React.FC<{}> = () => (
   <>
     <LazyLoad once>
       <section className={styles.inOnePlaceSection}>

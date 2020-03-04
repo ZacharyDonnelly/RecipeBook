@@ -1,16 +1,17 @@
 import * as React from 'react';
 import * as styles from './tagline.module.css';
+import { RecipeProps } from '../../assets/svg/recipes';
 
-const Recipes = React.lazy(() =>
+const Recipes: React.FC<RecipeProps> = React.lazy(() =>
   import(/* webpackChunkName: "CTA Card"*/ '../../assets/svg/recipes'),
 );
-const Tablet = React.lazy(() =>
+const Tablet: React.FC<{}> = React.lazy(() =>
   import(/* webpackChunkName: "CTA Photo"*/ '../../assets/svg/tablet'),
 );
-const Personalize = React.lazy(() =>
+const Personalize: React.FC<{}> = React.lazy(() =>
   import(/* webpackChunkName: "CTA Tablet"*/ '../../assets/svg/personalize'),
 );
-const CallToAction = () => {
+const CallToAction: React.FC<{}> = () => {
   const Loading = setTimeout(() => 500) ? null : 'Loading';
   return (
     <div className={styles.container}>

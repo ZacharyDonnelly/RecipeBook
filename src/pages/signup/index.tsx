@@ -1,16 +1,17 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { emailAction, passAction, confirmAction } from '../../components/actions';
+import { emailAction, passAction, confirmAction } from '../../actions';
+import { FormProps } from '../../components/forms';
 import * as styles from './signup.module.css';
 
-const Form = React.lazy(() =>
+const Form: React.FC<FormProps> = React.lazy(() =>
   import(/* webpackChunkName: "Signup-Form"*/ '../../components/forms'),
 );
-const Safety = React.lazy(() =>
+const Safety: React.FC<{}> = React.lazy(() =>
   import(/* webpackChunkName: "SafetySVG" */ '../../assets/svg/safetysvg'),
 );
-const Index: React.FunctionComponent<{}> = () => {
+const Index: React.FC<{}> = () => {
   const navigate = useNavigate();
   const handleClick = () => navigate('recipes');
   return (

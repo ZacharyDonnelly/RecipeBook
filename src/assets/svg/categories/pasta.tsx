@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Pasta: React.FunctionComponent<{}> = () => (
+const Pasta: React.FC<{}> = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 204.94 204.94" height="45px" width="45px">
     <polygon
       points="56.59 70.49 53.62 63.67 186.31 1.91 189.29 8.73 56.59 70.49"

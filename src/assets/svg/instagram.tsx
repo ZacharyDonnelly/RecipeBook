@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Insta = () => (
+const Insta: React.FC<{}> = () => (
   <svg
     width="28px"
     height="28px"

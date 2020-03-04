@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import * as styles from './navbar.module.css';
 
-const Index: React.FunctionComponent<{}> = () => {
+const Index: React.FC<{}> = () => {
   const [display, setDisplay]: any = React.useState(false);
   const barOne = React.useRef<HTMLDivElement>(null);
   const barTwo: any = React.useRef<HTMLDivElement>(null);
@@ -10,7 +10,8 @@ const Index: React.FunctionComponent<{}> = () => {
   const dropRef = React.useRef<HTMLDivElement>(null);
   const linkRef = React.useRef<HTMLAnchorElement>(null);
   const linkRefTwo = React.useRef<HTMLAnchorElement>(null);
-  const clickHandler = () => {
+
+  const clickHandler: Function = () => {
     if (!display) {
       barTwo.current.style.opacity = 0;
       barOne.current.classList.add(styles.rotateDown);

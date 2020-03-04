@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './routes';
 import './index.css';
 
-const rootElement = document.getElementById('main');
+const rootElement: HTMLElement = document.getElementById('main');
 render(
   <Router>
     <Routes />

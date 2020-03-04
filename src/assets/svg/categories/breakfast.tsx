@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Breakfast: React.FunctionComponent<{}> = () => (
+const Breakfast: React.FC<{}> = () => (
   <svg height="45px" width="45px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205.86 113.59">
     <ellipse
       cx="102.93"

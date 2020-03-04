@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { emailAction, passAction } from '../../components/actions';
+import { emailAction, passAction } from '../../actions';
 import * as styles from './login.module.css';
 
 const Form = React.lazy(() => import(/* webpackChunkName: "Login-Form"*/ '../../components/forms'));

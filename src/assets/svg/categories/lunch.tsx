@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Lunch: React.FunctionComponent<{}> = () => (
+const Lunch: React.FC<{}> = () => (
   <svg height="45px" width="45px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 217.05 148.07">
     <path
       d="M251.1,411.71c-1.53,1.37-3,2.73-3,5.46,0,5.46,6.1,5.46,6.1,10.92,0,2.73-1.53,4.1-3.05,5.46"
