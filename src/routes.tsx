@@ -4,20 +4,20 @@ import { Provider } from 'react-redux';
 import createStore from '../src/components/store';
 import Landing from './pages/landing';
 
-// const Landing: React.FunctionComponent<{}> = React.lazy(() =>
-//   import(/* webpackChunkName: "Landing"*/ /* webpackPreload: true*/ './pages/landing'),
-// );
 const Login: React.FunctionComponent<{}> = React.lazy(() =>
   import(/* webpackChunkName: "Login"*/ './pages/login'),
 );
 const Signup: React.FunctionComponent<{}> = React.lazy(() =>
   import(/* webpackChunkName: "Signup"*/ './pages/signup'),
 );
-const Selection: React.FunctionComponent<{}> = React.lazy(() =>
-  import(/* webpackChunkName: "Selection"*/ '../src/pages/selection'),
-);
+// const Selection: React.FunctionComponent<{}> = React.lazy(() =>
+//   import(/* webpackChunkName: "Selection"*/ '../src/pages/selection'),
+// );
 const Recipes: React.FunctionComponent<{}> = React.lazy(() =>
   import(/* webpackChunkName: "Existing-Recipes"*/ './pages/recipes'),
+);
+const Create: React.FunctionComponent<{}> = React.lazy(() =>
+  import(/* webpackChunkName: "Create-New"*/ './pages/create'),
 );
 const store = createStore();
 const Loading = setTimeout(() => 500) ? null : 'Loading';
@@ -32,10 +32,10 @@ const MainRoutes: React.FunctionComponent<{}> = () => (
         <Route path="signup" element={<Signup />} />
       </React.Suspense>
       <React.Suspense fallback={Loading}>
-        <Route path="selection" element={<Selection />} />
+        <Route path="recipes" element={<Recipes />} />
       </React.Suspense>
       <React.Suspense fallback={Loading}>
-        <Route path="recipes" element={<Recipes />} />
+        <Route path="create" element={<Create />} />
       </React.Suspense>
     </Routes>
   </Provider>
