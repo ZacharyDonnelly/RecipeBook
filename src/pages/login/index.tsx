@@ -3,9 +3,13 @@ import { connect } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { emailAction, passAction } from '../../actions';
 import * as styles from './login.module.css';
+import { FormProps } from '../../components/forms';
 
-const Form = React.lazy(() => import(/* webpackChunkName: "Login-Form"*/ '../../components/forms'));
-const Index: React.FunctionComponent<{}> = () => {
+const Form: React.FC<FormProps> = React.lazy(() =>
+  import(/* webpackChunkName: "Login-Form"*/ '../../components/forms'),
+);
+
+const Index: React.FC<{}> = () => {
   const navigate = useNavigate();
   const handleClick = () => navigate('recipes');
   return (
@@ -25,8 +29,8 @@ const Index: React.FunctionComponent<{}> = () => {
             secondAction={passAction}
             clickHandler={handleClick}
             linkContent="Don't have an account? Click here to sign up"
-            option={false}
             Field={null}
+            option={false}
             thirdAction={null}
           />
         </div>

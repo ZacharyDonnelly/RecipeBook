@@ -1,20 +1,21 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import { EmailAction, PassAction, ConfirmAction } from '../../actions/types';
+import { ActionCreator } from 'redux';
 import * as styles from './form.module.css';
 
 export interface FormProps {
   option?: Boolean;
-  route?: string;
-  clickHandler?: any;
-  btnText?: string;
-  Field?: any;
-  linkContent?: string;
-  action?: any;
-  dispatch?: any;
-  secondAction?: any;
-  thirdAction?: any;
+  route: string;
+  btnText: string;
+  linkContent: string;
+  clickHandler: () => void;
+  Field?: React.FunctionComponent;
+  action: ActionCreator<EmailAction>;
+  dispatch?: React.Dispatch<EmailAction | PassAction | ConfirmAction>;
+  secondAction: ActionCreator<PassAction>;
+  thirdAction?: ActionCreator<ConfirmAction>;
 }
 
 const Logo: React.FC<{}> = React.lazy(() =>
