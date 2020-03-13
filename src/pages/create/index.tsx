@@ -10,13 +10,13 @@ interface CreateProps {
   time: string;
   ingredients: string;
 }
-const Index: React.FC<CreateProps> = ({ dispatch, title, time, ingredients }) => {
+const Index = ({ dispatch, title, time, ingredients }: CreateProps) => {
   const navigate = useNavigate();
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <h1 className={styles.header}>Create a New Recipe</h1>
-        <form action="#">
+        <form action="#" onSubmit={e => handleSubmit(e)}>
           <input
             type="text"
             name="Title"
@@ -51,6 +51,7 @@ const Index: React.FC<CreateProps> = ({ dispatch, title, time, ingredients }) =>
     </div>
   );
 };
+const handleSubmit: Function = (e: React.FormEvent<HTMLFormElement>) => e.preventDefault();
 const mapStateToProps = (state: {
   recipe: { title: string; time: string; ingredients: string };
 }) => ({

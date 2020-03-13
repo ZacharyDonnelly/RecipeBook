@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { emailAction, passAction, confirmAction } from '../../actions';
 import { FormProps } from '../../components/forms';
 import * as styles from './signup.module.css';
+import { stringify } from 'querystring';
+const axios = require('axios');
 
 const Form: React.FC<FormProps> = React.lazy(() =>
   import(/* webpackChunkName: "Signup-Form"*/ '../../components/forms'),
@@ -11,9 +13,16 @@ const Form: React.FC<FormProps> = React.lazy(() =>
 const Safety: React.FC<{}> = React.lazy(() =>
   import(/* webpackChunkName: "SafetySVG" */ '../../assets/svg/safetysvg'),
 );
-const Index: React.FC<{}> = () => {
+const Index = props => {
   const navigate = useNavigate();
-  const handleClick = () => navigate('recipes');
+  const handleClick = () => {
+    axios
+      .post('http://localhost:3000/api/user', {
+        email: JSON.parse(JSON.stringify(props.email.email)),
+        password: JSON.parse(JSON.stringify(props.pass.pass)),
+      })
+      .then(() => navigate('recipes'));
+  };
   return (
     <>
       <Link to="/" className={styles.formLink}>
@@ -30,6 +39,7 @@ const Index: React.FC<{}> = () => {
             action={emailAction}
             secondAction={passAction}
             thirdAction={confirmAction}
+            //@ts-ignore
             clickHandler={handleClick}
             Field={Safety}
             linkContent="Already have an account? Click here to sign in"

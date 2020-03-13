@@ -6,7 +6,7 @@ import { ActionCreator } from 'redux';
 import * as styles from './form.module.css';
 
 export interface FormProps {
-  option?: Boolean;
+  option?: boolean;
   route: string;
   btnText: string;
   linkContent: string;
@@ -93,7 +93,7 @@ const Form: React.FC<FormProps> = ({
     </div>
   </form>
 );
-const handleSubmit: Function = (e: any) => e.preventDefault();
+const handleSubmit: Function = (e: React.FormEvent<HTMLFormElement>) => e.preventDefault();
 const mapStateToProps = (state: { email: string; pass: string; confirm: string }) => ({
   email: state.email,
   pass: state.pass,

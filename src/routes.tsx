@@ -7,9 +7,7 @@ import Landing from './pages/landing';
 const Login: React.FC<{}> = React.lazy(() =>
   import(/* webpackChunkName: "Login"*/ './pages/login'),
 );
-const Signup: React.FC<{}> = React.lazy(() =>
-  import(/* webpackChunkName: "Signup"*/ './pages/signup'),
-);
+const Signup = React.lazy(() => import(/* webpackChunkName: "Signup"*/ './pages/signup'));
 // const Selection: React.FunctionComponent<{}> = React.lazy(() =>
 //   import(/* webpackChunkName: "Selection"*/ '../src/pages/selection'),
 // );
