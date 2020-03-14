@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Seafood: React.FC<{}> = () => (
+const Seafood = () => (
   <svg height="45px" width="45px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 204.94 187.98">
     <path
       d="M180.79,433.16a5.59,5.59,0,0,1-5.06-8l14.09-29.93a5.58,5.58,0,0,1,5.06-3.21H224.7a5.58,5.58,0,1,1,0,11.16H198.44L185.86,430A5.6,5.6,0,0,1,180.79,433.16Z"

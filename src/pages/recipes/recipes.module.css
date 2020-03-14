@@ -11,6 +11,14 @@
   top: 1rem;
   left: 8rem;
 }
+.email {
+  margin-top: 1rem;
+  margin-left: 0.25rem;
+  font-size: 20px;
+  font-family: 'Gotham XNarrow', serif;
+  font-weight: 500;
+  color: var(--footer-color);
+}
 .btn {
   background-color: transparent;
   position: absolute;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Dessert: React.FC<{}> = () => (
+const Dessert = () => (
   <svg height="45px" width="45px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 189.94 182.93">
     <rect
       x="312.15"

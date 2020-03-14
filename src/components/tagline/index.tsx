@@ -5,13 +5,13 @@ import { RecipeProps } from '../../assets/svg/recipes';
 const Recipes: React.FC<RecipeProps> = React.lazy(() =>
   import(/* webpackChunkName: "CTA Card"*/ '../../assets/svg/recipes'),
 );
-const Tablet: React.FC<{}> = React.lazy(() =>
+const Tablet = React.lazy(() =>
   import(/* webpackChunkName: "CTA Photo"*/ '../../assets/svg/tablet'),
 );
-const Personalize: React.FC<{}> = React.lazy(() =>
+const Personalize = React.lazy(() =>
   import(/* webpackChunkName: "CTA Tablet"*/ '../../assets/svg/personalize'),
 );
-const CallToAction: React.FC<{}> = () => {
+const CallToAction = () => {
   const Loading = setTimeout(() => 500) ? null : 'Loading';
   return (
     <div className={styles.container}>

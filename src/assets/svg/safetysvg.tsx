@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const SafetySvg: React.FC<{}> = () => (
+const SafetySvg = () => (
   <svg
     viewBox="0 0 1024 1024"
     focusable="false"

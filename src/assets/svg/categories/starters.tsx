@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Starters: React.FC<{}> = () => (
+const Starters = () => (
   <svg width="45px" height="45px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 217.23 217.05">
     <line
       x1="182.36"

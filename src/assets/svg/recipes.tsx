@@ -4,7 +4,7 @@ export interface RecipeProps {
   width: string;
 }
 
-const Recipes: React.FC<RecipeProps> = ({ width }) => (
+const Recipes = ({ width }: RecipeProps) => (
   // freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
   <svg
     xmlns="http://www.w3.org/2000/svg"

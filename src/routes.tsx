@@ -4,22 +4,18 @@ import { Provider } from 'react-redux';
 import createStore from '../src/store';
 import Landing from './pages/landing';
 
-const Login: React.FC<{}> = React.lazy(() =>
-  import(/* webpackChunkName: "Login"*/ './pages/login'),
-);
+const Login = React.lazy(() => import(/* webpackChunkName: "Login"*/ './pages/login'));
 const Signup = React.lazy(() => import(/* webpackChunkName: "Signup"*/ './pages/signup'));
 // const Selection: React.FunctionComponent<{}> = React.lazy(() =>
 //   import(/* webpackChunkName: "Selection"*/ '../src/pages/selection'),
 // );
-const Recipes: React.FC<{}> = React.lazy(() =>
+const Recipes = React.lazy(() =>
   import(/* webpackChunkName: "Existing-Recipes"*/ './pages/recipes'),
 );
-const Create: React.FC<{}> = React.lazy(() =>
-  import(/* webpackChunkName: "Create-New"*/ './pages/create'),
-);
+const Create = React.lazy(() => import(/* webpackChunkName: "Create-New"*/ './pages/create'));
 const store = createStore();
 const Loading = setTimeout(() => 500) ? null : 'Loading';
-const MainRoutes: React.FC<{}> = () => (
+const MainRoutes = () => (
   <Provider store={store}>
     <Routes>
       <Route path="/" element={<Landing />} />

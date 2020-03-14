@@ -17,7 +17,7 @@ const Kitchen = React.lazy(() =>
   ),
 );
 const Footer = React.lazy(() => import(/* webpackChunkName: "Footer"*/ '../../components/footer'));
-const Landing: React.FunctionComponent<{}> = () => {
+const Landing = () => {
   const Loading = setTimeout(() => 500) ? null : 'Loading';
   return (
     <>

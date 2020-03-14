@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const IceCream: React.FC<{}> = () => (
+const IceCream = () => (
   <svg height="45px" width="45px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93.68 234.78">
     <path
       d="M301.91,553.13l-32-98.77h69.49l-32,98.77A2.85,2.85,0,0,1,301.91,553.13Z"

@@ -9,7 +9,7 @@ const Form: React.FC<FormProps> = React.lazy(() =>
   import(/* webpackChunkName: "Login-Form"*/ '../../components/forms'),
 );
 
-const Index: React.FC<{}> = () => {
+const Index = () => {
   const navigate = useNavigate();
   const handleClick = () => navigate('recipes');
   return (

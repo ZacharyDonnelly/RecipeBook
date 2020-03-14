@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Soups: React.FC<{}> = () => (
+const Soups = () => (
   <svg height="45px" width="45px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 204.94 184.83">
     <polygon
       points="63.77 165.86 58.48 160.58 169.88 49.49 175.18 54.77 63.77 165.86"

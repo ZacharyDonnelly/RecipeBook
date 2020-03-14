@@ -1,24 +1,23 @@
 import * as React from 'react';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { emailAction, passAction, confirmAction } from '../../actions';
 import { FormProps } from '../../components/forms';
 import * as styles from './signup.module.css';
-import { stringify } from 'querystring';
-const axios = require('axios');
 
 const Form: React.FC<FormProps> = React.lazy(() =>
   import(/* webpackChunkName: "Signup-Form"*/ '../../components/forms'),
 );
-const Safety: React.FC<{}> = React.lazy(() =>
+const Safety = React.lazy(() =>
   import(/* webpackChunkName: "SafetySVG" */ '../../assets/svg/safetysvg'),
 );
-const Index = props => {
+const Index = ({ email: { email }, pass: { pass } }) => {
   const navigate = useNavigate();
   const handleClick = async () => {
     const { data } = await axios.post('http://localhost:3000/api/user', {
-      email: JSON.parse(JSON.stringify(props.email.email)),
-      password: JSON.parse(JSON.stringify(props.pass.pass)),
+      email: JSON.parse(JSON.stringify(email)),
+      password: JSON.parse(JSON.stringify(pass)),
     });
     if (data == 'User Created') {
       navigate('recipes');
@@ -59,4 +58,5 @@ const mapStateToProps = (state: { email: string; pass: string; confirm: string }
   confirm: state.confirm,
 });
 
+//@ts-ignore
 export default connect(mapStateToProps)(Index);

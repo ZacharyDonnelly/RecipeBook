@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const LogoSvg: React.FC<{}> = () => {
+const LogoSvg = () => {
   return (
     <div>
       <svg
