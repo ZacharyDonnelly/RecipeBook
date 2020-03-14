@@ -15,13 +15,16 @@ const Safety: React.FC<{}> = React.lazy(() =>
 );
 const Index = props => {
   const navigate = useNavigate();
-  const handleClick = () => {
-    axios
-      .post('http://localhost:3000/api/user', {
-        email: JSON.parse(JSON.stringify(props.email.email)),
-        password: JSON.parse(JSON.stringify(props.pass.pass)),
-      })
-      .then(() => navigate('recipes'));
+  const handleClick = async () => {
+    const { data } = await axios.post('http://localhost:3000/api/user', {
+      email: JSON.parse(JSON.stringify(props.email.email)),
+      password: JSON.parse(JSON.stringify(props.pass.pass)),
+    });
+    if (data == 'User Created') {
+      navigate('recipes');
+    } else {
+      alert('The Email you entered is already in use');
+    }
   };
   return (
     <>
