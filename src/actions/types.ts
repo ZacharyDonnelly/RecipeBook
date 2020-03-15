@@ -4,6 +4,7 @@ import {
   CONFIRM_ACTION,
   TITLE_ACTION,
   TIME_ACTION,
+  CATEGORY_ACTION,
   INGREDIENT_ACTION,
 } from '../constants';
 
@@ -30,4 +31,8 @@ export interface TimeAction {
 export interface IngredientAction {
   type: typeof INGREDIENT_ACTION;
   ingredients: string;
+}
+export interface CategoryAction {
+  type: typeof CATEGORY_ACTION;
+  category: string;
 }

@@ -4,7 +4,7 @@
   height: 100%;
 }
 .container {
-  margin: 1.75rem 3rem;
+  margin: 1.25rem 3rem;
 }
 .header {
   color: #000;
@@ -61,7 +61,7 @@
 /*MEDIA*/
 @media screen and (min-width: 1300px) {
   .container {
-    margin: 12.5rem 45rem;
+    margin: 8.75rem 45rem;
   }
   .btn {
     width: 45%;

@@ -5,6 +5,7 @@ import {
   TitleAction,
   TimeAction,
   IngredientAction,
+  CategoryAction,
 } from './types';
 import {
   PASS_ACTION,
@@ -13,6 +14,7 @@ import {
   TITLE_ACTION,
   TIME_ACTION,
   INGREDIENT_ACTION,
+  CATEGORY_ACTION,
 } from '../constants';
 
 export const emailAction = (email = ''): EmailAction => ({
@@ -38,4 +40,8 @@ export const timeAction = (time = ''): TimeAction => ({
 export const ingredientAction = (ingredients = ''): IngredientAction => ({
   type: INGREDIENT_ACTION,
   ingredients,
+});
+export const categoryAction = (category = ''): CategoryAction => ({
+  type: CATEGORY_ACTION,
+  category,
 });

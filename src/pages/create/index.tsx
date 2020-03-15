@@ -1,17 +1,34 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { titleAction, timeAction, ingredientAction } from '../../actions';
-import { TitleAction, TimeAction, IngredientAction } from '../../actions/types';
+import { titleAction, timeAction, ingredientAction, categoryAction } from '../../actions';
+import { TitleAction, TimeAction, IngredientAction, CategoryAction } from '../../actions/types';
 import * as styles from './create.module.css';
 interface CreateProps {
-  dispatch: React.Dispatch<TitleAction | TimeAction | IngredientAction>;
+  dispatch: React.Dispatch<TitleAction | TimeAction | IngredientAction | CategoryAction>;
   title: string;
   time: string;
   ingredients: string;
+  category: string;
+  email: { email: string };
 }
-const Index = ({ dispatch, title, time, ingredients }: CreateProps) => {
+const Index = ({ dispatch, title, time, ingredients, category, email: { email } }: CreateProps) => {
   const navigate = useNavigate();
+  const handleClick = async () => {
+    const res = await axios.post('http://localhost:3000/api/new-recipe', {
+      email,
+      title,
+      category,
+      time,
+      ingredients,
+    });
+    if (res.status === 200) {
+      navigate('recipes');
+    } else {
+      alert('The Email you entered is already in use');
+    }
+  };
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -23,6 +40,14 @@ const Index = ({ dispatch, title, time, ingredients }: CreateProps) => {
             value={title}
             onChange={e => dispatch(titleAction(e.target.value))}
             placeholder="Enter Recipe Title"
+            className={styles.title}
+          />
+          <input
+            type="text"
+            name="Category"
+            value={category}
+            onChange={e => dispatch(categoryAction(e.target.value))}
+            placeholder="Enter Category"
             className={styles.title}
           />
           <input
@@ -43,7 +68,7 @@ const Index = ({ dispatch, title, time, ingredients }: CreateProps) => {
               required
             />
           </div>
-          <button className={styles.submitBtn} onClick={() => navigate('recipes')}>
+          <button className={styles.submitBtn} onClick={() => handleClick()}>
             Submit
           </button>
         </form>
@@ -53,11 +78,14 @@ const Index = ({ dispatch, title, time, ingredients }: CreateProps) => {
 };
 const handleSubmit: Function = (e: React.FormEvent<HTMLFormElement>) => e.preventDefault();
 const mapStateToProps = (state: {
-  recipe: { title: string; time: string; ingredients: string };
+  recipe: { title: string; time: string; ingredients: string; category: string };
+  email: string;
 }) => ({
+  email: state.email,
+  category: state.recipe.category,
   title: state.recipe.title,
   time: state.recipe.time,
   ingredients: state.recipe.ingredients,
 });
-
+// @ts-ignore
 export default connect(mapStateToProps)(Index);
