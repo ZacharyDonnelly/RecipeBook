@@ -22,6 +22,10 @@ const Index = ({ dispatch, title, time, ingredients, category, email: { email } 
       category,
       time,
       ingredients,
+      headers: {
+        Authorization: 'Bearer ' + document.cookie.slice(4),
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
     });
     if (res.status === 200) {
       navigate('recipes');

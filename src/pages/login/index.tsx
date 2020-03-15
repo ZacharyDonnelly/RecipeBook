@@ -16,10 +16,6 @@ const Index = ({ email: { email }, pass: { pass } }) => {
     const res = await axios.post('http://localhost:3000/api/auth', {
       email,
       pass,
-      headers: {
-        Authorization: 'Bearer ' + document.cookie.slice(4),
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
     });
     if (res.status === 200) {
       let twoWeeks = Date.now() + 6.04e8 * 2;
