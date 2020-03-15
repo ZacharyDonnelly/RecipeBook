@@ -17,7 +17,7 @@ const Index = ({ email: { email }, pass: { pass } }) => {
   const handleClick = async () => {
     const { data } = await axios.post('http://localhost:3000/api/user', {
       email,
-      password: pass,
+      pass,
     });
     if (data == 'User Created') {
       navigate('recipes');

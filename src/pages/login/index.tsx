@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { emailAction, passAction } from '../../actions';
 import * as styles from './login.module.css';
@@ -9,9 +10,20 @@ const Form: React.FC<FormProps> = React.lazy(() =>
   import(/* webpackChunkName: "Login-Form"*/ '../../components/forms'),
 );
 
-const Index = () => {
+const Index = ({ email: { email }, pass: { pass } }) => {
   const navigate = useNavigate();
-  const handleClick = () => navigate('recipes');
+  const handleClick = async () => {
+    const res = await axios.post('http://localhost:3000/api/auth', {
+      email,
+      pass,
+    });
+    if (res.status === 200) {
+      let twoWeeks = Date.now() + 6.04e8 * 2;
+      let expireDate = new Date(twoWeeks);
+      document.cookie = `jwt=${res.data.cookie};expires=${expireDate}`;
+      navigate('recipes');
+    }
+  };
   return (
     <>
       <Link to="/" className={styles.formLink}>
@@ -43,5 +55,5 @@ const mapStateToProps = (state: { email: string; pass: string }) => ({
   email: state.email,
   pass: state.pass,
 });
-
+// @ts-ignore
 export default connect(mapStateToProps)(Index);
