@@ -11,7 +11,7 @@ type TemplateProps = {
 const Template = ({ name, icon, route }: TemplateProps) => {
   const navigate = useNavigate();
   return (
-    <div className={styles.templateContainer} onClick={() => navigate(route)}>
+    <div className={styles.templateContainer} onClick={() => navigate(`/recipes/${route}`)}>
       {icon}
       <h5 className={styles.itemHeader}>{name}</h5>
     </div>

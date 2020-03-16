@@ -12,6 +12,9 @@ const Signup = React.lazy(() => import(/* webpackChunkName: "Signup"*/ './pages/
 const Recipes = React.lazy(() =>
   import(/* webpackChunkName: "Existing-Recipes"*/ './pages/recipes'),
 );
+const Categories = React.lazy(() =>
+  import(/* webpackChunkName: "Categories"*/ './pages/categories'),
+);
 const Create = React.lazy(() => import(/* webpackChunkName: "Create-New"*/ './pages/create'));
 const store = createStore();
 const Loading = setTimeout(() => 500) ? null : 'Loading';
@@ -27,6 +30,9 @@ const MainRoutes = () => (
       </React.Suspense>
       <React.Suspense fallback={Loading}>
         <Route path="recipes" element={<Recipes />} />
+      </React.Suspense>
+      <React.Suspense fallback={Loading}>
+        <Route path="recipes/:slug" element={<Categories />} />
       </React.Suspense>
       <React.Suspense fallback={Loading}>
         <Route path="create" element={<Create />} />
