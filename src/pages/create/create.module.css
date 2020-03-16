@@ -58,6 +58,13 @@
   margin-left: 0.5rem;
 }
 
+.dropDown {
+  width: 200px;
+  height: 40px;
+  margin-left: 2.25rem;
+  margin-bottom: 1rem;
+}
+
 /*MEDIA*/
 @media screen and (min-width: 1300px) {
   .container {

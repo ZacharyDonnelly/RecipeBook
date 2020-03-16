@@ -13,6 +13,7 @@ interface CreateProps {
   category: string;
   email: { email: string };
 }
+
 const Index = ({ dispatch, title, time, ingredients, category, email: { email } }: CreateProps) => {
   const navigate = useNavigate();
   const handleClick = async () => {
@@ -38,20 +39,33 @@ const Index = ({ dispatch, title, time, ingredients, category, email: { email } 
       <div className={styles.container}>
         <h1 className={styles.header}>Create a New Recipe</h1>
         <form action="#" onSubmit={e => handleSubmit(e)}>
+          <select
+            name="Category"
+            onChange={e => dispatch(categoryAction(e.target.value))}
+            className={styles.dropDown}>
+            <option value="Pasta">Pasta</option>
+            <option value="Cookies">Cookies</option>
+            <option value="Soups">Soups</option>
+            <option value="Cakes">Cakes</option>
+            <option value="Bakery">Bakery</option>
+            <option value="Starters">Starter</option>
+            <option value="Salad">Salad</option>
+            <option value="IceCream">IceCream</option>
+            <option value="Sweets">Sweets</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Beverages">Beverages</option>
+            <option value="Burgers">Burgers</option>
+            <option value="Seafood">Seafood</option>
+          </select>
           <input
             type="text"
             name="Title"
             value={title}
             onChange={e => dispatch(titleAction(e.target.value))}
             placeholder="Enter Recipe Title"
-            className={styles.title}
-          />
-          <input
-            type="text"
-            name="Category"
-            value={category}
-            onChange={e => dispatch(categoryAction(e.target.value))}
-            placeholder="Enter Category"
             className={styles.title}
           />
           <input
@@ -72,6 +86,7 @@ const Index = ({ dispatch, title, time, ingredients, category, email: { email } 
               required
             />
           </div>
+
           <button className={styles.submitBtn} onClick={() => handleClick()}>
             Submit
           </button>
