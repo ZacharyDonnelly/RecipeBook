@@ -39,7 +39,7 @@ const Starters = React.lazy(() =>
   import(/*webpackChunkName: "Starters-svg"*/ '../../assets/svg/categories/starters'),
 );
 const Drinks = React.lazy(() =>
-  import(/*webpackChunkName: "Drinks-svg"*/ '../../assets/svg/categories/drinks'),
+  import(/*webpackChunkName: "Drinks-svg"*/ '../../assets/svg/categories/beverages'),
 );
 const Bakery = React.lazy(() =>
   import(/*webpackChunkName: "Bakery-svg"*/ '../../assets/svg/categories/bakery'),
@@ -82,7 +82,6 @@ const Recipes = ({ email: { email } }) => {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
       });
-      console.log(data);
       data.forEach((x: { category: string }) => {
         switch (x.category) {
           case 'Dinner':
