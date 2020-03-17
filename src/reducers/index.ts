@@ -1,20 +1,21 @@
 import { combineReducers } from 'redux';
-import { persistReducer } from 'redux-persist';
 import emailReducer from './emailReducer';
 import passReducer from './passReducer';
 import confirmReducer from './confirmReducer';
 import recipeReducer from './recipeReducer';
+import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-const rootPersistConfig = {
+const persistConfig = {
   key: 'root',
-  storage: storage,
+  storage,
+  whitelist: ['email'],
 };
 
 const rootReducer = combineReducers({
-  email: persistReducer(rootPersistConfig, emailReducer),
+  email: emailReducer,
   pass: passReducer,
   confirm: confirmReducer,
   recipe: recipeReducer,
 });
-export default rootReducer;
+export default persistReducer(persistConfig, rootReducer);

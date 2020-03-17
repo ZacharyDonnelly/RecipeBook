@@ -85,7 +85,6 @@
 .navLinkOne,
 .navLinkTwo {
   text-transform: capitalize;
-  display: none;
   color: #fff;
 }
 
@@ -126,6 +125,7 @@
   flex-direction: column;
 }
 .dropdownLink {
+  text-transform: capitalize;
   z-index: inherit;
   text-decoration: none;
   padding-left: 1rem;

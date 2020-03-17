@@ -4,13 +4,10 @@
   overflow-x: hidden !important;
   background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(232, 232, 232, 0.125)),
     url('../../assets/images/category-background.jpeg') no-repeat;
-  background-position: 20% 10%;
+  background-position: 0 0;
   background-size: cover;
 }
-.wrapper::before {
-  content: '';
-  background: red;
-}
+
 .container {
   margin-top: 145px;
   display: flex;

@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 const Navbar = React.lazy(() =>
   import(/* webpackChunkName: "Navbar"*/ /* webpackPreload: true*/ '../../components/navbar'),
 );

@@ -1,17 +1,11 @@
 import * as React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { persistStore } from 'redux-persist';
-import { PersistGate } from 'redux-persist/integration/react';
-import createStore from '../src/store';
+import { Routes, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Landing from './pages/landing';
-import storage from 'redux-persist/lib/storage';
 
 const Login = React.lazy(() => import(/* webpackChunkName: "Login"*/ './pages/login'));
 const Signup = React.lazy(() => import(/* webpackChunkName: "Signup"*/ './pages/signup'));
-// const Selection: React.FunctionComponent<{}> = React.lazy(() =>
-//   import(/* webpackChunkName: "Selection"*/ '../src/pages/selection'),
-// );
+
 const Recipes = React.lazy(() =>
   import(/* webpackChunkName: "Existing-Recipes"*/ './pages/recipes'),
 );
@@ -23,35 +17,39 @@ const Individual = React.lazy(() =>
 );
 const Create = React.lazy(() => import(/* webpackChunkName: "Create-New"*/ './pages/create'));
 
-const store = createStore();
-const reduxPersistor = persistStore(store);
-const Loading = setTimeout(() => 500) ? null : 'Loading';
-const MainRoutes = () => (
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={reduxPersistor}>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <React.Suspense fallback={Loading}>
-          <Route path="login" element={<Login />} />
-        </React.Suspense>
-        <React.Suspense fallback={Loading}>
-          <Route path="signup" element={<Signup />} />
-        </React.Suspense>
-        <React.Suspense fallback={Loading}>
-          <Route path="recipes" element={<Recipes />} />
-        </React.Suspense>
-        <React.Suspense fallback={Loading}>
-          <Route path="recipes/:slug" element={<Categories />} />
-        </React.Suspense>
-        <React.Suspense fallback={Loading}>
-          <Route path="recipes/:slug/:slug" element={<Individual />} />
-        </React.Suspense>
-        <React.Suspense fallback={Loading}>
-          <Route path="create" element={<Create />} />
-        </React.Suspense>
-      </Routes>
-    </PersistGate>
-  </Provider>
-);
+const MainRoutes = ({ email: { email } }) => {
+  const Loading = setTimeout(() => 500) ? null : 'Loading';
+  const [loggedIn, setLoggedIn] = React.useState(false);
+  React.useEffect(() => {
+    JSON.parse(JSON.stringify(email)).length > 0 ? setLoggedIn(true) : setLoggedIn(false);
+  }, []);
+  return (
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <React.Suspense fallback={Loading}>
+        <Route path="login" element={<Login />} />
+      </React.Suspense>
+      <React.Suspense fallback={Loading}>
+        <Route path="signup" element={<Signup />} />
+      </React.Suspense>
+      <React.Suspense fallback={Loading}>
+        <Route path="recipes" element={<Recipes />} />
+      </React.Suspense>
+      <React.Suspense fallback={Loading}>
+        <Route path="recipes/:slug" element={<Categories />} />
+      </React.Suspense>
+      <React.Suspense fallback={Loading}>
+        <Route path="recipes/:slug/:slug" element={<Individual />} />
+      </React.Suspense>
+      <React.Suspense fallback={Loading}>
+        <Route path="create" element={<Create />} />
+      </React.Suspense>
+    </Routes>
+  );
+};
 
-export default MainRoutes;
+const mapStateToProps = (state: { email: string }) => ({
+  email: state.email,
+});
+// @ts-ignore
+export default connect(mapStateToProps)(MainRoutes);

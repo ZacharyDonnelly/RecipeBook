@@ -3,9 +3,12 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as styles from './navbar.module.css';
 
-const Index = (email: { email }) => {
-  const [display, setDisplay]: any = React.useState(false);
+const Index = ({ email: { email } }) => {
+  const [display, setDisplay] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState('');
+  const [status, setStatus] = React.useState('');
+  const [signUp, setSignUp] = React.useState('');
+  const [createNew, setCreateNew] = React.useState('');
   const barOne = React.useRef<HTMLDivElement>(null);
   const barTwo: any = React.useRef<HTMLDivElement>(null);
   const barThree = React.useRef<HTMLDivElement>(null);
@@ -37,8 +40,14 @@ const Index = (email: { email }) => {
       setDisplay(!display);
     }
   };
+  React.useEffect(() => {
+    JSON.parse(JSON.stringify(email)) ? setLoggedIn('recipes') : setLoggedIn('login');
+    JSON.parse(JSON.stringify(email)) ? setStatus('create') : setStatus('signup');
+    JSON.parse(JSON.stringify(email)) ? setCreateNew('a New Recipe') : setCreateNew(null);
+    JSON.parse(JSON.stringify(email)) ? setSignUp(null) : setSignUp('Signup');
+  }, []);
+
   React.useLayoutEffect(() => {
-    email ? setLoggedIn('recipes') : setLoggedIn('login');
     const handleScroll = () => {
       let scroll = window.scrollY;
       if (scroll > 800) {
@@ -58,6 +67,7 @@ const Index = (email: { email }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   });
+
   const twoStyles = `${styles.navLinkOne} ${styles.loggedIn}`;
   return (
     <div className={styles.placeholder}>
@@ -68,12 +78,12 @@ const Index = (email: { email }) => {
           ref={linkRef}>
           {loggedIn}
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="signup"
-          className={loggedIn ? styles.null : styles.navLinkTwo}
+          className={!loggedIn ? styles.navLinkTwo : styles.null}
           ref={linkRefTwo}>
           Signup
-        </NavLink>
+        </NavLink> */}
         <div className={styles.menu} onClick={() => clickHandler()}>
           <div className={styles.bar} ref={barOne} />
           <div className={styles.bar} ref={barTwo} />
@@ -88,16 +98,19 @@ const Index = (email: { email }) => {
                 </NavLink>
               </span>
               <span className={styles.dropdownLinkSpan}>
-                <NavLink to="login" className={styles.dropdownLink} activeClassName={styles.active}>
-                  Login
+                <NavLink
+                  to={`${loggedIn}`}
+                  className={styles.dropdownLink}
+                  activeClassName={styles.active}>
+                  {loggedIn}
                 </NavLink>
               </span>
               <span className={styles.dropdownLinkSpan}>
                 <NavLink
-                  to="signup"
+                  to={`${status}`}
                   className={styles.dropdownLink}
                   activeClassName={styles.active}>
-                  Signup
+                  {status} {createNew}
                 </NavLink>
               </span>
             </div>
@@ -108,7 +121,7 @@ const Index = (email: { email }) => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: { email }) => ({
   email: state.email,
 });
 

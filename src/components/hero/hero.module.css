@@ -43,6 +43,7 @@
   background-color: transparent;
   width: 210px;
   outline: none;
+  cursor: pointer;
   text-transform: capitalize;
   height: 43px;
   font-size: 17px;
