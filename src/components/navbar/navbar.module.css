@@ -82,8 +82,8 @@
   cursor: pointer;
   z-index: 100;
 }
-.navLinkOne,
-.navLinkTwo {
+/* .navLinkTwo */
+.navLinkOne {
   text-transform: capitalize;
   color: #fff;
 }
@@ -162,8 +162,8 @@
   .bar {
     display: none;
   }
-  .navLinkOne,
-  .navLinkTwo {
+  /* .navLinkTwo  */
+  .navLinkOne {
     display: block;
     text-decoration: none !important;
     font-family: 'Gotham XNarrow', sans-serif !important;
@@ -180,14 +180,20 @@
   .loggedIn {
     right: 2rem !important;
   }
-  .navLinkOne:hover,
-  .navLinkTwo:hover {
+  /* .navLinkTwo:hover */
+  .navLinkOne:hover {
     color: #d95526 !important;
   }
-  .navLinkTwo {
+  /* .navLinkTwo {
     right: 1rem;
+  } */
+}
+@media screen and (max-width: 1024px) {
+  .navLinkOne {
+    display: none;
   }
 }
+
 /*ANIMATIONS*/
 @keyframes dropFromTop {
   0% {

@@ -14,7 +14,7 @@ const Index = ({ email: { email } }) => {
   const barThree = React.useRef<HTMLDivElement>(null);
   const dropRef = React.useRef<HTMLDivElement>(null);
   const linkRef = React.useRef<HTMLAnchorElement>(null);
-  const linkRefTwo = React.useRef<HTMLAnchorElement>(null);
+  // const linkRefTwo = React.useRef<HTMLAnchorElement>(null);
 
   const clickHandler: Function = () => {
     if (!display) {
@@ -55,13 +55,13 @@ const Index = ({ email: { email } }) => {
         barTwo.current.style.background = '#000';
         barThree.current.style.background = '#000';
         linkRef.current.style.color = '#000';
-        linkRefTwo.current.style.color = '#000';
+        // linkRefTwo.current.style.color = '#000';
       } else if (scroll < 800) {
         barOne.current.style.background = '#fff';
         barTwo.current.style.background = '#fff';
         barThree.current.style.background = '#fff';
         linkRef.current.style.color = '#fff';
-        linkRefTwo.current.style.color = '#fff';
+        // linkRefTwo.current.style.color = '#fff';
       }
     };
     window.addEventListener('scroll', handleScroll);
