@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 import * as styles from './navbar.module.css';
 
-const Index: React.FC<{}> = () => {
+const Index = (email: { email }) => {
   const [display, setDisplay]: any = React.useState(false);
+  const [loggedIn, setLoggedIn] = React.useState('');
   const barOne = React.useRef<HTMLDivElement>(null);
   const barTwo: any = React.useRef<HTMLDivElement>(null);
   const barThree = React.useRef<HTMLDivElement>(null);
@@ -36,6 +38,7 @@ const Index: React.FC<{}> = () => {
     }
   };
   React.useLayoutEffect(() => {
+    email ? setLoggedIn('recipes') : setLoggedIn('login');
     const handleScroll = () => {
       let scroll = window.scrollY;
       if (scroll > 800) {
@@ -55,13 +58,20 @@ const Index: React.FC<{}> = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   });
+  const twoStyles = `${styles.navLinkOne} ${styles.loggedIn}`;
   return (
     <div className={styles.placeholder}>
       <nav className={styles.nav}>
-        <NavLink to="login" className={styles.navLinkOne} ref={linkRef}>
-          Login
+        <NavLink
+          to={`${loggedIn}`}
+          className={loggedIn ? twoStyles : styles.navLinkOne}
+          ref={linkRef}>
+          {loggedIn}
         </NavLink>
-        <NavLink to="signup" className={styles.navLinkTwo} ref={linkRefTwo}>
+        <NavLink
+          to="signup"
+          className={loggedIn ? styles.null : styles.navLinkTwo}
+          ref={linkRefTwo}>
           Signup
         </NavLink>
         <div className={styles.menu} onClick={() => clickHandler()}>
@@ -98,4 +108,8 @@ const Index: React.FC<{}> = () => {
   );
 };
 
-export default Index;
+const mapStateToProps = state => ({
+  email: state.email,
+});
+
+export default connect(mapStateToProps)(Index);

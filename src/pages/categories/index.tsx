@@ -16,7 +16,7 @@ const Index = ({ email: { email } }) => {
   React.useEffect(() => {
     const getRecipeCategory = async () => {
       const { data } = await axios.post('http://localhost:3000/api/category', {
-        email: 'email@email.com',
+        email,
         category: route,
         headers: {
           Authorization: 'Bearer ' + document.cookie.slice(4),
