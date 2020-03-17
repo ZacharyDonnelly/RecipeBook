@@ -6,6 +6,7 @@ import {
   TIME_ACTION,
   CATEGORY_ACTION,
   INGREDIENT_ACTION,
+  DIRECTIONS_ACTION,
 } from '../constants';
 
 export interface EmailAction {
@@ -35,4 +36,8 @@ export interface IngredientAction {
 export interface CategoryAction {
   type: typeof CATEGORY_ACTION;
   category: string;
+}
+export interface DirectionsAction {
+  type: typeof DIRECTIONS_ACTION;
+  directions: string;
 }

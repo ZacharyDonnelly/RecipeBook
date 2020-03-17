@@ -2,19 +2,42 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { titleAction, timeAction, ingredientAction, categoryAction } from '../../actions';
-import { TitleAction, TimeAction, IngredientAction, CategoryAction } from '../../actions/types';
+import {
+  titleAction,
+  timeAction,
+  ingredientAction,
+  categoryAction,
+  directionsAction,
+} from '../../actions';
+import {
+  TitleAction,
+  TimeAction,
+  IngredientAction,
+  CategoryAction,
+  DirectionsAction,
+} from '../../actions/types';
 import * as styles from './create.module.css';
 interface CreateProps {
-  dispatch: React.Dispatch<TitleAction | TimeAction | IngredientAction | CategoryAction>;
+  dispatch: React.Dispatch<
+    TitleAction | TimeAction | IngredientAction | CategoryAction | DirectionsAction
+  >;
   title: string;
   time: string;
   ingredients: string;
+  directions: string;
   category: string;
   email: { email: string };
 }
 
-const Index = ({ dispatch, title, time, ingredients, category, email: { email } }: CreateProps) => {
+const Index = ({
+  dispatch,
+  title,
+  time,
+  ingredients,
+  directions,
+  category,
+  email: { email },
+}: CreateProps) => {
   const navigate = useNavigate();
   const handleClick = async () => {
     const res = await axios.post('http://localhost:3000/api/new-recipe', {
@@ -23,6 +46,7 @@ const Index = ({ dispatch, title, time, ingredients, category, email: { email } 
       category,
       time,
       ingredients,
+      directions,
       headers: {
         Authorization: 'Bearer ' + document.cookie.slice(4),
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -86,6 +110,16 @@ const Index = ({ dispatch, title, time, ingredients, category, email: { email } 
               required
             />
           </div>
+          <div className={styles.textAreaContainer}>
+            <textarea
+              name="Directions"
+              placeholder="Enter in the directions to create this wonderful recipe!"
+              value={directions}
+              onChange={e => dispatch(directionsAction(e.target.value))}
+              className={styles.textArea}
+              required
+            />
+          </div>
 
           <button className={styles.submitBtn} onClick={() => handleClick()}>
             Submit
@@ -97,7 +131,13 @@ const Index = ({ dispatch, title, time, ingredients, category, email: { email } 
 };
 const handleSubmit: Function = (e: React.FormEvent<HTMLFormElement>) => e.preventDefault();
 const mapStateToProps = (state: {
-  recipe: { title: string; time: string; ingredients: string; category: string };
+  recipe: {
+    title: string;
+    time: string;
+    ingredients: string;
+    category: string;
+    directions: string;
+  };
   email: string;
 }) => ({
   email: state.email,
@@ -105,6 +145,7 @@ const mapStateToProps = (state: {
   title: state.recipe.title,
   time: state.recipe.time,
   ingredients: state.recipe.ingredients,
+  directions: state.recipe.directions,
 });
 // @ts-ignore
 export default connect(mapStateToProps)(Index);

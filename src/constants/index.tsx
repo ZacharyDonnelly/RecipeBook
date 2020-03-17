@@ -5,3 +5,4 @@ export const TITLE_ACTION: string = 'TITLE_ACTION';
 export const TIME_ACTION: string = 'TIME_ACTION';
 export const INGREDIENT_ACTION: string = 'INGREDIENT_ACTION';
 export const CATEGORY_ACTION: string = 'CATEGORY_ACTION';
+export const DIRECTIONS_ACTION: string = 'DIRECTIONS_ACTION';

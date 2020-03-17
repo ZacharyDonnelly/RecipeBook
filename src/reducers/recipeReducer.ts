@@ -1,14 +1,29 @@
-import { TITLE_ACTION, TIME_ACTION, INGREDIENT_ACTION, CATEGORY_ACTION } from '../constants';
+import {
+  TITLE_ACTION,
+  TIME_ACTION,
+  INGREDIENT_ACTION,
+  CATEGORY_ACTION,
+  DIRECTIONS_ACTION,
+} from '../constants';
 
 const INITIAL_STATE = {
   title: '',
   time: '',
   ingredients: '',
+  directions: '',
+  category: '',
 };
 
 export default (
   state = INITIAL_STATE,
-  action: { type: string; title: string; time: string; ingredients: string; category: string },
+  action: {
+    type: string;
+    title: string;
+    time: string;
+    ingredients: string;
+    category: string;
+    directions: string;
+  },
 ) => {
   switch (action.type) {
     case TITLE_ACTION:
@@ -30,6 +45,11 @@ export default (
       return {
         ...state,
         ingredients: action.ingredients,
+      };
+    case DIRECTIONS_ACTION:
+      return {
+        ...state,
+        directions: action.directions,
       };
     default:
       return state;

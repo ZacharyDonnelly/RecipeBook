@@ -1,6 +1,5 @@
 .wrapper {
   background-color: #f4f5f7;
-  padding-top: 3rem;
   height: 100%;
 }
 .container {
@@ -61,7 +60,7 @@
 .dropDown {
   width: 200px;
   height: 40px;
-  margin-left: 2.25rem;
+  margin-left: 0;
   margin-bottom: 1rem;
 }
 

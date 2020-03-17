@@ -4,6 +4,7 @@ import {
   ConfirmAction,
   TitleAction,
   TimeAction,
+  DirectionsAction,
   IngredientAction,
   CategoryAction,
 } from './types';
@@ -15,6 +16,7 @@ import {
   TIME_ACTION,
   INGREDIENT_ACTION,
   CATEGORY_ACTION,
+  DIRECTIONS_ACTION,
 } from '../constants';
 
 export const emailAction = (email = ''): EmailAction => ({
@@ -44,4 +46,8 @@ export const ingredientAction = (ingredients = ''): IngredientAction => ({
 export const categoryAction = (category = ''): CategoryAction => ({
   type: CATEGORY_ACTION,
   category,
+});
+export const directionsAction = (directions = ''): DirectionsAction => ({
+  type: DIRECTIONS_ACTION,
+  directions,
 });
