@@ -12,7 +12,7 @@ const Form: React.FC<FormProps> = React.lazy(() =>
 const Safety = React.lazy(() =>
   import(/* webpackChunkName: "SafetySVG" */ '../../assets/svg/safetysvg'),
 );
-const Index = ({ email: { email }, pass: { pass } }) => {
+const Index = ({ email, pass }) => {
   const navigate = useNavigate();
   const handleClick = async () => {
     const { data } = await axios.post('http://localhost:3006/api/user', {
@@ -52,11 +52,14 @@ const Index = ({ email: { email }, pass: { pass } }) => {
     </>
   );
 };
-const mapStateToProps = (state: { email: string; pass: string; confirm: string }) => ({
-  email: state.email,
-  pass: state.pass,
+const mapStateToProps = (state: {
+  email: { email: string };
+  pass: { pass: string };
+  confirm: string;
+}) => ({
+  email: state.email.email,
+  pass: state.pass.pass,
   confirm: state.confirm,
 });
 
-//@ts-ignore
 export default connect(mapStateToProps)(Index);

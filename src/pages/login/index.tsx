@@ -10,7 +10,7 @@ const Form: React.FC<FormProps> = React.lazy(() =>
   import(/* webpackChunkName: "Login-Form"*/ '../../components/forms'),
 );
 
-const Index = ({ email: { email }, pass: { pass } }) => {
+const Index = ({ email, pass }) => {
   const navigate = useNavigate();
   const handleClick = async () => {
     const res = await axios.post('http://localhost:3006/api/auth', {
@@ -51,9 +51,9 @@ const Index = ({ email: { email }, pass: { pass } }) => {
   );
 };
 
-const mapStateToProps = (state: { email: string; pass: string }) => ({
-  email: state.email,
-  pass: state.pass,
+const mapStateToProps = (state: { email: { email: string }; pass: { pass: string } }) => ({
+  email: state.email.email,
+  pass: state.pass.pass,
 });
-// @ts-ignore
+
 export default connect(mapStateToProps)(Index);

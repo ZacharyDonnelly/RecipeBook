@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Template from './template';
 import * as styles from './categories.module.css';
 
-const Index = ({ email: { email } }) => {
+const Index = ({ email }) => {
   const [category, setCategory] = React.useState([]);
   const location = useLocation();
   const navigate = useNavigate();
@@ -43,8 +43,8 @@ const Index = ({ email: { email } }) => {
   );
 };
 
-const mapStateToProps = (state: { email: string }) => ({
-  email: state.email,
+const mapStateToProps = (state: { email: { email: string } }) => ({
+  email: state.email.email,
 });
-// @ts-ignore
+
 export default connect(mapStateToProps)(Index);

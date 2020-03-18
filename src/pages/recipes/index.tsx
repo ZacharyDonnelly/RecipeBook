@@ -54,7 +54,7 @@ const Cookies = React.lazy(() =>
   import(/*webpackChunkName: "Cookies-svg"*/ '../../assets/svg/categories/cookies'),
 );
 
-const Recipes = ({ email: { email } }) => {
+const Recipes = ({ email }) => {
   let [dinner, setDinnerCount]: React.ComponentState = React.useState(0);
   let [seafood, setSeafoodCount]: React.ComponentState = React.useState(0);
   let [burgers, setBurgersCount]: React.ComponentState = React.useState(0);
@@ -221,8 +221,8 @@ const Recipes = ({ email: { email } }) => {
     </div>
   );
 };
-const mapStateToProps = (state: { email: string }) => ({
-  email: state.email,
+const mapStateToProps = (state: { email: { email: any } }) => ({
+  email: state.email.email,
 });
-//@ts-ignore
+
 export default connect(mapStateToProps)(Recipes);

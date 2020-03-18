@@ -17,10 +17,8 @@ const Individual = React.lazy(() =>
 );
 const Create = React.lazy(() => import(/* webpackChunkName: "Create-New"*/ './pages/create'));
 
-const MainRoutes = ({ email, loggedIn }) => {
+const MainRoutes = ({ loggedIn }) => {
   const Loading = setTimeout(() => 500) ? null : 'Loading';
-  console.log(loggedIn);
-  console.log(email);
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
@@ -57,9 +55,9 @@ const MainRoutes = ({ email, loggedIn }) => {
     </Routes>
   );
 };
+// !DELETE THE EMAIL CALL FROM CONNECT
 const mapStateToProps = (state: { email: { email: any } }) => ({
   loggedIn: !!state.email.email,
-  email: state.email.email,
 });
-// @ts-ignore
+
 export default connect(mapStateToProps)(MainRoutes);
