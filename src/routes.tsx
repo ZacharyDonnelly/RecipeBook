@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Routes, Route, Redirect, useNavigate } from 'react-router-dom';
+import { Routes, Route, Redirect } from 'react-router-dom';
 import Landing from './pages/landing';
 import { connect } from 'react-redux';
-import PrivateRoute from './components/protected-route';
 
 const Login = React.lazy(() => import(/* webpackChunkName: "Login"*/ './pages/login'));
 const Signup = React.lazy(() => import(/* webpackChunkName: "Signup"*/ './pages/signup'));
@@ -18,19 +17,16 @@ const Individual = React.lazy(() =>
 );
 const Create = React.lazy(() => import(/* webpackChunkName: "Create-New"*/ './pages/create'));
 
-const MainRoutes = ({ email: { email } }) => {
+const MainRoutes = ({ email, loggedIn }) => {
   const Loading = setTimeout(() => 500) ? null : 'Loading';
-  const [loggedIn, setLoggedIn] = React.useState(null);
-  const navigate = useNavigate();
-  React.useEffect(() => {
-    JSON.parse(JSON.stringify(email)) ? setLoggedIn(true) : setLoggedIn(false);
-  }, []);
+  console.log(loggedIn);
+  console.log(email);
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
       <React.Suspense fallback={Loading}>
         <Route path="login" element={<Login />}>
-          {loggedIn ? navigate('recipes') : <Login />}
+          {loggedIn ? <Redirect to="recipes" /> : <Login />}
         </Route>
       </React.Suspense>
       <React.Suspense fallback={Loading}>
@@ -61,8 +57,9 @@ const MainRoutes = ({ email: { email } }) => {
     </Routes>
   );
 };
-const mapStateToProps = (state: { email: string }) => ({
-  email: state.email,
+const mapStateToProps = (state: { email: { email: any } }) => ({
+  loggedIn: !!state.email.email,
+  email: state.email.email,
 });
 // @ts-ignore
 export default connect(mapStateToProps)(MainRoutes);

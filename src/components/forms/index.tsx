@@ -42,58 +42,65 @@ const Form: React.FC<FormProps> = ({
   dispatch,
   secondAction,
   thirdAction,
-}) => (
-  <form className={styles.form} onSubmit={e => handleSubmit(e)}>
-    <div className="login-svg">
-      <React.Suspense fallback="Loading">
-        <Logo />
-      </React.Suspense>
-    </div>
-    <div className={styles.control}>
-      <Avatar />
-      <input
-        type="email"
-        placeholder="Email"
-        className={Black}
-        onChange={e => dispatch(action(e.target.value))}
-        required
-      />
-    </div>
-    <div className={styles.control}>
-      <Lock />
-      <input
-        type="password"
-        placeholder="Password"
-        className={Orange}
-        onChange={e => dispatch(secondAction(e.target.value))}
-        required
-      />
-    </div>
-    {option ? (
-      <div className={styles.control}>
-        <React.Suspense fallback="Loading...">
-          <Field />
+}) => {
+  const [tempEmail, setTempEmail] = React.useState('');
+  const handleSubmit: Function = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(action(tempEmail));
+  };
+  return (
+    <form className={styles.form} onSubmit={e => handleSubmit(e)}>
+      <div className="login-svg">
+        <React.Suspense fallback="Loading">
+          <Logo />
         </React.Suspense>
+      </div>
+      <div className={styles.control}>
+        <Avatar />
         <input
-          type="password"
-          placeholder="Confirm Password"
+          type="email"
+          placeholder="Email"
           className={Black}
-          onChange={e => dispatch(thirdAction(e.target.value))}
+          onChange={e => setTempEmail(e.target.value)}
           required
         />
       </div>
-    ) : null}
-    <Link to={route} rel="prefetch" className={styles.link}>
-      {linkContent}
-    </Link>
-    <div className={styles.control}>
-      <button className={styles.btn} onClick={() => clickHandler()}>
-        {btnText}
-      </button>
-    </div>
-  </form>
-);
-const handleSubmit: Function = (e: React.FormEvent<HTMLFormElement>) => e.preventDefault();
+      <div className={styles.control}>
+        <Lock />
+        <input
+          type="password"
+          placeholder="Password"
+          className={Orange}
+          onChange={e => dispatch(secondAction(e.target.value))}
+          required
+        />
+      </div>
+      {option ? (
+        <div className={styles.control}>
+          <React.Suspense fallback="Loading...">
+            <Field />
+          </React.Suspense>
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            className={Black}
+            onChange={e => dispatch(thirdAction(e.target.value))}
+            required
+          />
+        </div>
+      ) : null}
+      <Link to={route} rel="prefetch" className={styles.link}>
+        {linkContent}
+      </Link>
+      <div className={styles.control}>
+        <button type="submit" className={styles.btn} onClick={() => clickHandler()}>
+          {btnText}
+        </button>
+      </div>
+    </form>
+  );
+};
+
 const mapStateToProps = (state: { email: string; pass: string; confirm: string }) => ({
   email: state.email,
   pass: state.pass,
