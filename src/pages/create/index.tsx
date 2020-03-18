@@ -40,7 +40,7 @@ const Index = ({
 }: CreateProps) => {
   const navigate = useNavigate();
   const handleClick = async () => {
-    const res = await axios.post('http://localhost:3000/api/new-recipe', {
+    const res = await axios.post('http://localhost:3006/api/new-recipe', {
       email,
       title,
       category,

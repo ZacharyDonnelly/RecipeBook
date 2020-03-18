@@ -15,7 +15,7 @@ const Index = ({ email: { email } }) => {
   route = letterOne + route.slice(1);
   React.useEffect(() => {
     const getRecipeCategory = async () => {
-      const { data } = await axios.post('http://localhost:3000/api/category', {
+      const { data } = await axios.post('http://localhost:3006/api/category', {
         email,
         category: route,
         headers: {

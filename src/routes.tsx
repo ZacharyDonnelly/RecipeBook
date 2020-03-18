@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Routes, Route, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { Routes, Route, Redirect, useNavigate } from 'react-router-dom';
 import Landing from './pages/landing';
+import { connect } from 'react-redux';
+import PrivateRoute from './components/protected-route';
 
 const Login = React.lazy(() => import(/* webpackChunkName: "Login"*/ './pages/login'));
 const Signup = React.lazy(() => import(/* webpackChunkName: "Signup"*/ './pages/signup'));
@@ -19,35 +20,47 @@ const Create = React.lazy(() => import(/* webpackChunkName: "Create-New"*/ './pa
 
 const MainRoutes = ({ email: { email } }) => {
   const Loading = setTimeout(() => 500) ? null : 'Loading';
-  const [loggedIn, setLoggedIn] = React.useState(false);
+  const [loggedIn, setLoggedIn] = React.useState(null);
+  const navigate = useNavigate();
   React.useEffect(() => {
-    JSON.parse(JSON.stringify(email)).length > 0 ? setLoggedIn(true) : setLoggedIn(false);
+    JSON.parse(JSON.stringify(email)) ? setLoggedIn(true) : setLoggedIn(false);
   }, []);
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
       <React.Suspense fallback={Loading}>
-        <Route path="login" element={<Login />} />
+        <Route path="login" element={<Login />}>
+          {loggedIn ? navigate('recipes') : <Login />}
+        </Route>
       </React.Suspense>
       <React.Suspense fallback={Loading}>
-        <Route path="signup" element={<Signup />} />
+        <Route path="signup" element={<Signup />}>
+          {loggedIn ? <Redirect to="recipes" /> : <Signup />}
+        </Route>
       </React.Suspense>
       <React.Suspense fallback={Loading}>
-        <Route path="recipes" element={<Recipes />} />
+        <Route path="recipes" element={<Recipes />}>
+          {loggedIn ? <Recipes /> : <Redirect to="login" />}
+        </Route>
       </React.Suspense>
       <React.Suspense fallback={Loading}>
-        <Route path="recipes/:slug" element={<Categories />} />
+        <Route path="recipes/:slug" element={<Categories />}>
+          {loggedIn ? <Categories /> : <Redirect to="login" />}
+        </Route>
       </React.Suspense>
       <React.Suspense fallback={Loading}>
-        <Route path="recipes/:slug/:slug" element={<Individual />} />
+        <Route path="recipes/:slug/:slug" element={<Individual />}>
+          {loggedIn ? <Individual /> : <Redirect to="login" />}
+        </Route>
       </React.Suspense>
       <React.Suspense fallback={Loading}>
-        <Route path="create" element={<Create />} />
+        <Route path="create" element={<Create />}>
+          {loggedIn ? <Create /> : <Redirect to="login" />}
+        </Route>
       </React.Suspense>
     </Routes>
   );
 };
-
 const mapStateToProps = (state: { email: string }) => ({
   email: state.email,
 });

@@ -75,7 +75,7 @@ const Recipes = ({ email: { email } }) => {
   const Loading = setTimeout(() => 500) ? null : 'Loading';
   React.useEffect(() => {
     const getRecipeCount = async () => {
-      const { data } = await axios.post('http://localhost:3000/api/get-all', {
+      const { data } = await axios.post('http://localhost:3006/api/get-all', {
         email,
         headers: {
           Authorization: 'Bearer ' + document.cookie.slice(4),

@@ -13,7 +13,7 @@ const Form: React.FC<FormProps> = React.lazy(() =>
 const Index = ({ email: { email }, pass: { pass } }) => {
   const navigate = useNavigate();
   const handleClick = async () => {
-    const res = await axios.post('http://localhost:3000/api/auth', {
+    const res = await axios.post('http://localhost:3006/api/auth', {
       email,
       pass,
     });

@@ -15,7 +15,7 @@ const Safety = React.lazy(() =>
 const Index = ({ email: { email }, pass: { pass } }) => {
   const navigate = useNavigate();
   const handleClick = async () => {
-    const { data } = await axios.post('http://localhost:3000/api/user', {
+    const { data } = await axios.post('http://localhost:3006/api/user', {
       email,
       pass,
     });
