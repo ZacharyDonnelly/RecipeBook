@@ -46,7 +46,7 @@ const Form: React.FC<FormProps> = ({
   const [tempEmail, setTempEmail] = React.useState('');
   const handleSubmit: Function = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(action(tempEmail));
+    clickHandler();
   };
   return (
     <form className={styles.form} onSubmit={e => handleSubmit(e)}>
@@ -93,7 +93,7 @@ const Form: React.FC<FormProps> = ({
         {linkContent}
       </Link>
       <div className={styles.control}>
-        <button type="submit" className={styles.btn} onClick={() => clickHandler()}>
+        <button type="submit" className={styles.btn} onClick={() => dispatch(action(tempEmail))}>
           {btnText}
         </button>
       </div>
@@ -101,9 +101,9 @@ const Form: React.FC<FormProps> = ({
   );
 };
 
-const mapStateToProps = (state: { email: string; pass: string; confirm: string }) => ({
-  email: state.email,
-  pass: state.pass,
+const mapStateToProps = (state: { email: { email: any }; pass: { pass: any }; confirm: any }) => ({
+  email: state.email.email,
+  pass: state.pass.pass,
   confirm: state.confirm,
 });
 export default connect(mapStateToProps)(Form);

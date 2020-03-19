@@ -1,0 +1,87 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden !important;
+}
+.btn {
+  border: 3px solid var(--button-border);
+  background-color: transparent;
+  width: 110px;
+  outline: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  height: 30px;
+  border-radius: 6px;
+  box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.4);
+  font-size: 17px;
+  font-weight: 600;
+  color: #000;
+}
+
+/*TEMPLATE*/
+.templateContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.headerBox {
+  margin: 3rem 1.5rem 0 0;
+  text-align: center;
+}
+.title,
+.ingredientsHeader,
+.tertiaryHeader,
+.directionsHeader {
+  font-family: 'Gotham XNarrow', serif;
+}
+.title {
+  font-size: 36px;
+  padding: 3px;
+  border-bottom: 1px solid #000;
+}
+
+.tertiaryHeader {
+  font-size: 20px;
+  color: rgb(131, 130, 130);
+}
+
+.ingredientsHeader {
+  font-size: 20px;
+}
+
+.ingredients {
+  text-align: left;
+}
+.ingredientsList {
+  margin-right: 9rem;
+}
+.ingredientsItem,
+.directions {
+  color: rgb(131, 130, 130);
+  font-family: 'proxima nova', sans-serif;
+}
+
+.ingredientsItem {
+  font-size: 18px;
+  letter-spacing: -1px;
+}
+
+.directionsContainer {
+  width: 75%;
+  text-align: left;
+  line-height: 1.5;
+}
+.directionsHeader {
+  font-size: 20px;
+}
+.directions {
+  font-size: 17px;
+}
+
+@media screen and (min-width: 1300px) {
+  .directionsContainer {
+    margin-top: 2rem;
+    width: 32.5%;
+  }
+}

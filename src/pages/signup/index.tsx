@@ -41,7 +41,6 @@ const Index = ({ email, pass }) => {
             action={emailAction}
             secondAction={passAction}
             thirdAction={confirmAction}
-            //@ts-ignore
             clickHandler={handleClick}
             Field={Safety}
             linkContent="Already have an account? Click here to sign in"

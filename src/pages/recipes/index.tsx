@@ -221,7 +221,7 @@ const Recipes = ({ email }) => {
     </div>
   );
 };
-const mapStateToProps = (state: { email: { email: any } }) => ({
+const mapStateToProps = (state: { email: { email: string } }) => ({
   email: state.email.email,
 });
 

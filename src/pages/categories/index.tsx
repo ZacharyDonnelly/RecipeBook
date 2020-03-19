@@ -31,10 +31,12 @@ const Index = ({ email }) => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <h1 className={styles.header}>{route.toUpperCase()}</h1>
-        {category.map(x => {
+        {category.map(recipesByCategory => {
           return (
-            <div key={x.id} onClick={() => navigate(`/recipes/${pathRoute}/${x.title}`)}>
-              <Template time={x.time} title={x.title} />
+            <div
+              key={recipesByCategory.id}
+              onClick={() => navigate(`/recipes/${pathRoute}/${recipesByCategory.id}`)}>
+              <Template time={recipesByCategory.time} title={recipesByCategory.title} />
             </div>
           );
         })}
