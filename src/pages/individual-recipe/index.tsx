@@ -25,6 +25,7 @@ const Index = ({ email }) => {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
       });
+      console.log(data);
       setInfo([data]);
     };
     getRecipe();
@@ -43,6 +44,7 @@ const Index = ({ email }) => {
                 time={recipe.time}
                 ingredients={recipe.ingredients}
                 directions={recipe.directions}
+                key={recipe.id}
               />
             </div>
           );
