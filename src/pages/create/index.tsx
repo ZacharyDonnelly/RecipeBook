@@ -103,7 +103,7 @@ const Index = ({
           <div className={styles.textAreaContainer}>
             <textarea
               name="Ingredients"
-              placeholder="Enter in your ingredients and we will separate them each line!"
+              placeholder="Enter in one ingredient per line. We will be separating ingredients by line."
               value={ingredients}
               onChange={e => dispatch(ingredientAction(e.target.value))}
               className={styles.textArea}
@@ -113,7 +113,7 @@ const Index = ({
           <div className={styles.textAreaContainer}>
             <textarea
               name="Directions"
-              placeholder="Enter in the directions to create this wonderful recipe!"
+              placeholder="Enter in the directions to create this wonderful recipe! We will be separating directions by line."
               value={directions}
               onChange={e => dispatch(directionsAction(e.target.value))}
               className={styles.textArea}

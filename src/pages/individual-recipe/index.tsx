@@ -9,23 +9,21 @@ const Index = ({ email }) => {
   const [getInfo, setInfo] = React.useState([]);
   const navigate = useNavigate();
   const location = useLocation();
-  let category = location.pathname.split('/')[2];
-  let capitalizeName = category[0].toUpperCase();
-  category = capitalizeName + category.slice(1);
-  const ID = location.pathname[location.pathname.length - 1];
-  const numID = Number(ID);
+  const preCategory = location.pathname.split('/')[2];
+  const capitalizeName = preCategory[0].toUpperCase();
+  const category = `${capitalizeName}${preCategory.slice(1)}`;
+  const integerID = Number(location.pathname.split('/')[3]);
   React.useEffect(() => {
     const getRecipe = async () => {
       const { data } = await axios.post('http://localhost:3006/api/recipe', {
         email,
-        id: numID,
+        id: integerID,
         category,
         headers: {
           Authorization: 'Bearer ' + document.cookie.slice(4),
           'Content-Type': 'application/x-www-form-urlencoded',
         },
       });
-      console.log(data);
       setInfo([data]);
     };
     getRecipe();

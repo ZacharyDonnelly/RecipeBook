@@ -11,25 +11,28 @@
   top: 1rem;
   left: 8rem;
 }
-.email {
-  margin-top: 1rem;
-  margin-left: 0.25rem;
-  font-size: 20px;
-  font-family: 'Gotham XNarrow', serif;
-  font-weight: 500;
-  color: var(--footer-color);
-}
-.btn {
+.btn,
+.signOutBtn {
   background-color: transparent;
   position: absolute;
+  font-family: 'Gotham XNarrow', serif;
+  color: #000;
+  cursor: pointer;
+}
+.btn {
+  font-size: 18px;
   top: 4.5rem;
   left: 3.5rem;
   border: 2.5px solid var(--footer-color);
-  font-family: 'Gotham XNarrow', serif;
-  font-size: 18px;
   width: 250px;
-  color: #000;
   padding: 0.5rem 0;
+}
+.signOutBtn {
+  top: 1rem;
+  font-size: 20px;
+  right: -1rem;
+  width: 150px;
+  padding: 0.25rem 0;
 }
 .container {
   overflow-x: hidden !important;

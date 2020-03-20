@@ -71,8 +71,15 @@ const Recipes = ({ email }) => {
   let [soups, setSoupsCount]: React.ComponentState = React.useState(0);
   let [cookies, setCookiesCount]: React.ComponentState = React.useState(0);
   let [pasta, setPastaCount]: React.ComponentState = React.useState(0);
+
   const navigate = useNavigate();
-  const Loading = setTimeout(() => 500) ? null : 'Loading';
+  const handleClick: Function = () => {
+    if (localStorage.getItem('persist:root').length > 0) {
+      localStorage.removeItem('persist:root');
+      navigate('/');
+      window.location.reload();
+    }
+  };
   React.useEffect(() => {
     const getRecipeCount = async () => {
       const { data } = await axios.post('http://localhost:3006/api/get-all', {
@@ -139,14 +146,16 @@ const Recipes = ({ email }) => {
     };
     getRecipeCount();
   }, []);
-
+  const Loading = setTimeout(() => 500) ? null : 'Loading';
   return (
     <div className={styles.wrapper}>
       <Link to="/" style={{ color: '#000', fontSize: 32, textDecoration: 'none' }}>
         Home
       </Link>
+      <button className={styles.signOutBtn} onClick={() => handleClick()}>
+        Sign Out
+      </button>
       <h1 className={styles.header}>Recipes</h1>
-      <h2 className={styles.email}>{email}</h2> {/*DELETE ME*/}
       <button className={styles.btn} onClick={() => navigate('create')}>
         Create New
       </button>
@@ -221,6 +230,7 @@ const Recipes = ({ email }) => {
     </div>
   );
 };
+
 const mapStateToProps = (state: { email: { email: string } }) => ({
   email: state.email.email,
 });
