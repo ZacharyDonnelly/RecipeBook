@@ -32,8 +32,6 @@ const Index = ({ email, pass }) => {
       </Link>
       <div className={styles.container} />
       <div className={styles.cardBackground}>
-        <h3 className={styles.cardHeader}>Welcome</h3>
-        <h3 className={styles.cardSubHeader}>Enjoy your stay!</h3>
         <div className={styles.cardMain}>
           <Form
             route="login"

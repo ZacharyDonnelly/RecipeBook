@@ -1,5 +1,5 @@
 .formLink {
-  color: #000;
+  color: #fff;
   font-family: 'Gotham XNarrow', sans-serif;
   font-size: 28px;
   position: absolute;
@@ -13,12 +13,11 @@
   color: #6190e8;
 }
 .container {
-  background: var(--offwhite);
-  opacity: 0.7;
-  background-size: 500% 500%;
   overflow-x: hidden !important;
-  transition: background 3s ease;
-  background-position: 50% 50%;
+  background: linear-gradient(rgba(0, 0, 0, 0.89), rgba(232, 232, 232, 0.025)),
+    url('../../assets/images/login-bg.jpg') no-repeat;
+  background-size: cover;
+  background-position: 87% 45%;
   display: flex;
   height: 100vh;
   min-height: 35rem;
@@ -33,7 +32,7 @@
   width: 300px;
   left: -5.75rem;
   top: -8.5rem;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.45);
   position: absolute;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translate(50%, 50%);
@@ -47,7 +46,7 @@
   position: absolute;
   left: -2.5rem;
   top: 4rem;
-  background-color: rgba(244, 245, 247, 0.3);
+  background-color: rgba(244, 245, 247, 0.33);
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -60,29 +59,11 @@
   flex: 1 1 auto;
   padding: 1.25rem;
 }
-.cardHeader {
-  color: #000;
-  font-size: 28px;
-  font-family: 'Gotham XNarrow', sans-serif;
-  font-weight: bold;
-  position: absolute;
-  top: 1%;
-  left: 35%;
-  width: 100%;
-}
-.cardSubHeader {
-  color: #f4f5f7;
-  opacity: 0.8;
-  font-size: 20px;
-  font-family: 'Gotham XNarrow', sans-serif;
-  font-weight: 600;
-  position: absolute;
-  top: 8%;
-  left: 50%;
-  width: 100%;
-}
 /*MEDIA*/
 @media screen and (min-width: 1300px) {
+  .container {
+    background-position: 70% 0;
+  }
   .cardBackground {
     top: -3%;
     left: 6%;
@@ -92,16 +73,13 @@
     left: 19%;
     width: 460px;
   }
-  .cardHeader {
-    font-size: 36px;
-    left: 42.5%;
-  }
-  .cardSubHeader {
-    display: none;
-  }
 }
+
 /*IPAD PRO*/
 @media screen and (max-width: 1024px) and (min-width: 1014px) {
+  .container {
+    background-position: 60% 0;
+  }
   .cardBackground {
     top: -5%;
     left: -13%;
@@ -111,16 +89,13 @@
     left: 10%;
     width: 450px;
   }
-  .cardHeader {
-    left: 38%;
-    font-size: 36px;
-  }
-  .cardSubHeader {
-    display: none;
-  }
 }
+
 /*IPAD*/
 @media screen and (min-width: 768px) and (max-width: 800px) and (max-height: 1024px) {
+  .container {
+    background-position: 100% 0;
+  }
   .cardBackground {
     top: 0;
     left: -30%;
@@ -129,12 +104,5 @@
   .cardMain {
     left: 7%;
     width: 450px;
-  }
-  .cardHeader {
-    left: 38%;
-    font-size: 36px;
-  }
-  .cardSubHeader {
-    display: none;
   }
 }
