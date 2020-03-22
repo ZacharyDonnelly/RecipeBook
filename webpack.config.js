@@ -13,6 +13,7 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) =>
       entry: './src/index.tsx',
       devServer: {
         historyApiFallback: true,
+        port: 8081,
       },
       mode,
       module: {
