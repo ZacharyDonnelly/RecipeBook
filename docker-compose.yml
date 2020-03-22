@@ -1,12 +1,12 @@
 version: '3.3'
 services:
   react-dev:
-    container_name: cb-one
+    container_name: frontend
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '1337:1337'
+      - '8081:8081'
     volumes:
       - '.:/app'
       - '/app/node_modules'

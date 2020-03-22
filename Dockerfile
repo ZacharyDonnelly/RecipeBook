@@ -8,7 +8,6 @@ WORKDIR /usr/src/app
 COPY package.json /usr/src/app/
 RUN yarn
 
-
 # Bundle app source
 COPY . /usr/src/app
 RUN yarn prod
