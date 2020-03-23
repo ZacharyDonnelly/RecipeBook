@@ -1,14 +1,14 @@
-version: '3.3'
-services:
-  react-dev:
-    container_name: frontend
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - '5623:5623'
-    volumes:
-      - '.:/app'
-      - '/app/node_modules'
-    environment:
-      - NODE_ENV=development
+# version: '3.3'
+# services:
+#   react-dev:
+#     container_name: frontend
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     ports:
+#       - '5623:5623'
+#     volumes:
+#       - '.:/app'
+#       - '/app/node_modules'
+#     environment:
+#       - NODE_ENV=development
