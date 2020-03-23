@@ -2,10 +2,13 @@ import * as React from 'react';
 import * as styles from './hero.module.css';
 import { useNavigate } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
+import { connect } from 'react-redux';
 
-const Index: React.FC<{}> = () => {
+const Index = ({ loggedIn }) => {
   const navigate = useNavigate();
-  const clickHandler = () => navigate('signup');
+  const clickHandler = () => {
+    loggedIn ? navigate('recipes') : navigate('signup');
+  };
   return (
     <LazyLoad once>
       <section className={styles.hero}>
@@ -18,5 +21,8 @@ const Index: React.FC<{}> = () => {
     </LazyLoad>
   );
 };
+const mapStateToProps = (state: { email: { email: string } }) => ({
+  loggedIn: !!state.email.email,
+});
 
-export default Index;
+export default connect(mapStateToProps)(Index);

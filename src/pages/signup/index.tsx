@@ -12,17 +12,23 @@ const Form: React.FC<FormProps> = React.lazy(() =>
 const Safety = React.lazy(() =>
   import(/* webpackChunkName: "SafetySVG" */ '../../assets/svg/safetysvg'),
 );
-const Index = ({ email, pass }) => {
+const Index = ({ email, pass, confirm }) => {
   const navigate = useNavigate();
   const handleClick = async () => {
-    const { data } = await axios.post('http://localhost:3006/api/user', {
-      email,
-      pass,
-    });
-    if (data == 'User Created') {
-      navigate('recipes');
+    if (pass === confirm) {
+      const { data } = await axios.post('http://localhost:3006/api/user', {
+        email,
+        pass,
+      });
+      if (data == 'User Created') {
+        localStorage.removeItem('persist:root');
+        navigate('/login');
+        window.location.reload();
+      } else {
+        alert('The Email you entered is already in use');
+      }
     } else {
-      alert('The Email you entered is already in use');
+      alert('Passwords do not match');
     }
   };
   return (
@@ -52,11 +58,11 @@ const Index = ({ email, pass }) => {
 const mapStateToProps = (state: {
   email: { email: string };
   pass: { pass: string };
-  confirm: string;
+  confirm: { confirm: string };
 }) => ({
   email: state.email.email,
   pass: state.pass.pass,
-  confirm: state.confirm,
+  confirm: state.confirm.confirm,
 });
 
 export default connect(mapStateToProps)(Index);

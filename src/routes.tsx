@@ -17,20 +17,16 @@ const Individual = React.lazy(() =>
 );
 const Create = React.lazy(() => import(/* webpackChunkName: "Create-New"*/ './pages/create'));
 
-const MainRoutes = ({ loggedIn, email }) => {
+const MainRoutes = ({ loggedIn }) => {
   const Loading = setTimeout(() => 500) ? null : 'Loading';
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
       <React.Suspense fallback={Loading}>
-        <Route path="login" element={<Login />}>
-          {loggedIn ? <Redirect to="recipes" /> : <Login />}
-        </Route>
+        <Route path="login" element={<Login />} />
       </React.Suspense>
       <React.Suspense fallback={Loading}>
-        <Route path="signup" element={<Signup />}>
-          {loggedIn ? <Redirect to="recipes" /> : <Signup />}
-        </Route>
+        <Route path="signup" element={<Signup />} />
       </React.Suspense>
       <React.Suspense fallback={Loading}>
         <Route path="recipes" element={<Recipes />}>
@@ -58,7 +54,6 @@ const MainRoutes = ({ loggedIn, email }) => {
 
 const mapStateToProps = (state: { email: { email: string } }) => ({
   loggedIn: !!state.email.email,
-  email: state.email.email,
 });
 
 export default connect(mapStateToProps)(MainRoutes);

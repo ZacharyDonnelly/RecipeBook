@@ -10,10 +10,12 @@ export interface FormProps {
   route: string;
   btnText: string;
   linkContent: string;
-  clickHandler: () => void;
+  clickHandler: any;
+  // clickHandler: () => void;
   Field?: React.FunctionComponent;
   action: ActionCreator<EmailAction>;
-  dispatch?: React.Dispatch<EmailAction | PassAction | ConfirmAction>;
+  dispatch?: any;
+  // dispatch?: React.Dispatch<EmailAction | PassAction | ConfirmAction>;
   secondAction: ActionCreator<PassAction>;
   thirdAction?: ActionCreator<ConfirmAction>;
 }
@@ -46,10 +48,11 @@ const Form: React.FC<FormProps> = ({
   const [tempEmail, setTempEmail] = React.useState('');
   const handleSubmit: Function = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     clickHandler();
   };
   return (
-    <form className={styles.form} onSubmit={e => handleSubmit(e)}>
+    <form className={styles.form} action="#" onSubmit={e => handleSubmit(e)}>
       <div className="login-svg">
         <React.Suspense fallback="Loading">
           <Logo />
@@ -104,6 +107,6 @@ const Form: React.FC<FormProps> = ({
 const mapStateToProps = (state: { email: { email: any }; pass: { pass: any }; confirm: any }) => ({
   email: state.email.email,
   pass: state.pass.pass,
-  confirm: state.confirm,
+  confirm: state.confirm.confirm,
 });
 export default connect(mapStateToProps)(Form);
