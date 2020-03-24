@@ -21,7 +21,7 @@
 }
 .btn {
   font-size: 18px;
-  top: 4.5rem;
+  top: 6rem;
   left: 3.5rem;
   border: 2.5px solid var(--footer-color);
   width: 250px;
@@ -70,7 +70,7 @@
     left: 49rem;
   }
   .btn {
-    top: 9rem;
+    top: 10.5rem;
     left: 45rem;
   }
   .container {
