@@ -13,17 +13,20 @@ const Form: React.FC<FormProps> = React.lazy(() =>
 const Index = ({ email, pass }) => {
   const navigate = useNavigate();
   const handleClick = async () => {
-    const res = await axios.post('http://localhost:3006/api/auth', {
-      email,
-      pass,
-    });
-    if (res.status === 200) {
-      let twoWeeks = Date.now() + 6.04e8 * 2;
-      let expireDate = new Date(twoWeeks);
-      document.cookie = `jwt=${res.data.cookie};expires=${expireDate}`;
-      navigate('recipes');
-    }else {
-      alert("Invalid email or password!")
+    try {
+      const res = await axios.post('http://localhost:3006/api/auth', {
+        email,
+        pass,
+      });
+      if (res.status === 200) {
+        let twoWeeks = Date.now() + 6.04e8 * 2;
+        let expireDate = new Date(twoWeeks);
+        document.cookie = `jwt=${res.data.cookie};expires=${expireDate}`;
+        navigate('recipes');
+      }
+    } catch (err) {
+      console.log('OOPS, there was an error: ', err);
+      alert('Invalid Email or password');
     }
   };
   return (
