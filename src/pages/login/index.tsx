@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { emailAction, passAction } from '../../actions';
 import * as styles from './login.module.css';
 import { FormProps } from '../../components/forms';
+import config from '../../../config';
 
 const Form: React.FC<FormProps> = React.lazy(() =>
   import(/* webpackChunkName: "Login-Form"*/ '../../components/forms'),
@@ -14,7 +15,7 @@ const Index = ({ email, pass }) => {
   const navigate = useNavigate();
   const handleClick = async () => {
     try {
-      const res = await axios.post('http://localhost:3006/api/auth', {
+      const res = await axios.post(`${config}/api/auth`, {
         email,
         pass,
       });

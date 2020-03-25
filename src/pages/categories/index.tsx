@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Template from './template';
 import * as styles from './categories.module.css';
+import config from '../../../config';
 
 const Index = ({ email }) => {
   const [category, setCategory] = React.useState([]);
@@ -15,7 +16,7 @@ const Index = ({ email }) => {
   route = letterOne + route.slice(1);
   React.useEffect(() => {
     const getRecipeCategory = async () => {
-      const { data } = await axios.post('http://localhost:3006/api/category', {
+      const { data } = await axios.post(`${config}/api/category`, {
         email,
         category: route,
         headers: {

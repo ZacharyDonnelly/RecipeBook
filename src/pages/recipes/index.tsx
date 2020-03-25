@@ -4,6 +4,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import Template from './template';
 import * as styles from './recipes.module.css';
+import config from '../../../config';
 
 const Pasta = React.lazy(() =>
   import(/*webpackChunkName: "Pasta-svg"*/ '../../assets/svg/categories/pasta'),
@@ -82,7 +83,7 @@ const Recipes = ({ email }) => {
   };
   React.useEffect(() => {
     const getRecipeCount = async () => {
-      const { data } = await axios.post('http://localhost:3006/api/get-all', {
+      const { data } = await axios.post(`${config}/api/get-all`, {
         email,
         headers: {
           Authorization: 'Bearer ' + document.cookie.slice(4),

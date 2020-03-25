@@ -17,6 +17,7 @@ import {
   DirectionsAction,
 } from '../../actions/types';
 import * as styles from './create.module.css';
+import config from '../../../config';
 interface CreateProps {
   dispatch: React.Dispatch<
     TitleAction | TimeAction | IngredientAction | CategoryAction | DirectionsAction
@@ -40,7 +41,7 @@ const Index = ({
 }: CreateProps) => {
   const navigate = useNavigate();
   const handleClick = async () => {
-    const res = await axios.post('http://localhost:3006/api/new-recipe', {
+    const res = await axios.post(`${config}/api/new-recipe`, {
       email,
       title,
       category,

@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { emailAction, passAction, confirmAction } from '../../actions';
 import { FormProps } from '../../components/forms';
 import * as styles from './signup.module.css';
+import config from '../../../config';
 
 const Form: React.FC<FormProps> = React.lazy(() =>
   import(/* webpackChunkName: "Signup-Form"*/ '../../components/forms'),
@@ -16,7 +17,7 @@ const Index = ({ email, pass, confirm }) => {
   const navigate = useNavigate();
   const handleClick = async () => {
     if (pass === confirm) {
-      const { data } = await axios.post('http://localhost:3006/api/user', {
+      const { data } = await axios.post(`${config}/api/user`, {
         email,
         pass,
       });

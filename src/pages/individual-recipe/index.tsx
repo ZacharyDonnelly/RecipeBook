@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Template from './template';
 import * as styles from './individual.module.css';
+import config from '../../../config';
 
 const Index = ({ email }) => {
   const [getInfo, setInfo] = React.useState([]);
@@ -15,7 +16,7 @@ const Index = ({ email }) => {
   const integerID = Number(location.pathname.split('/')[3]);
   React.useEffect(() => {
     const getRecipe = async () => {
-      const { data } = await axios.post('http://localhost:3006/api/recipe', {
+      const { data } = await axios.post(`${config}/api/recipe`, {
         email,
         id: integerID,
         category,
