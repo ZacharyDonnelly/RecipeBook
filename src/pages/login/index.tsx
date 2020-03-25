@@ -22,6 +22,8 @@ const Index = ({ email, pass }) => {
       let expireDate = new Date(twoWeeks);
       document.cookie = `jwt=${res.data.cookie};expires=${expireDate}`;
       navigate('recipes');
+    }else {
+      alert("Invalid email or password!")
     }
   };
   return (
