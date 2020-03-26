@@ -31,5 +31,6 @@ body {
   width: 100%;
   overflow-x: hidden !important;
   font-stretch: 100%;
+  margin: 0px;
   -webkit-font-smoothing: antialiased;
 }
