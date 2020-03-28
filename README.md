@@ -3,7 +3,10 @@
 <hr />
 
 ## Motivation
-// fill in 
+This motivation behind this project came out of sheer need for a personalized recipe keeper. While of course
+there are great options out there already; I wanted something a little more "my own". Aside from that I wanted a project
+that was a little more challenging compared to my others. I wanted to take a different approach to my deployment process as well
+as my overall development steps. Overall I am very very happy how the MVP turned out and I plan on introducing new features to this as I go!
 
 ### Stack
 Front-End: React/Hooks, Redux, TypeScript, & CSS Modules.
