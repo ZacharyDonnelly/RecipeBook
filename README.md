@@ -9,7 +9,11 @@ that was a little more challenging compared to my others. I wanted to take a dif
 as my overall development steps. Overall I am very very happy how the MVP turned out and I plan on introducing new features to this as I go!
 
 ### Stack
+
 Front-End: React/Hooks, Redux, TypeScript, & CSS Modules.
+
+<br />
+
 Deployment: Docker Containers, Deployed on AWS EC2 Instance.
 
 <hr />
@@ -17,6 +21,10 @@ Deployment: Docker Containers, Deployed on AWS EC2 Instance.
 ![Homepage](https://i.imgur.com/O6YcUpW.png)
 
 <hr />
+
+# Usage
+
+## Installation
 
 Use the package manager [Yarn](https://yarnpkg.com/lang/en/) to install dependencies.
 
