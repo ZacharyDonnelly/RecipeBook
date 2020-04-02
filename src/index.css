@@ -17,11 +17,13 @@
   font-weight: normal;
   font-style: normal;
 }
+
 :root {
   --button-border: #f27405;
   --footer-color: #7c8ea6;
   --offwhite: #f2eae4;
 }
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
