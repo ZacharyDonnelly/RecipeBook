@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { emailAction, passAction } from '../../actions';
 import * as styles from './login.module.css';
 import { FormProps } from '../../components/forms';
-import config from '../../../config';
+import { config } from '../../../config';
 
 const Form: React.FC<FormProps> = React.lazy(() =>
   import(/* webpackChunkName: "Login-Form"*/ '../../components/forms'),
