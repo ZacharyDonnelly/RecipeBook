@@ -11,7 +11,7 @@
     "dev": "yarn run webpack --env.mode=development --hot",
     "prod:ts": "yarn run prod --env.presets typescript",
     "prod:analyze": "yarn run prod --env.presets analyze",
-    "prod:compress": "yarn run prod --env.presets compress",
+    "prod:compress": "yarn run prod --env.mode=production compress",
     "prod": "yarn run webpack --env.mode=production",
     "prod:debug": "yarn run debug --env.mode production",
     "dev:debug": "yarn run debug --env.mode development"
