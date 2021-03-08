@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 COPY . /usr/src/app
 RUN yarn
-RUN yarn prod:compress
+RUN yarn prod
 
 # STAGE 2
 FROM nginx:1.16.0-alpine
