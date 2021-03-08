@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { emailAction, passAction, confirmAction } from '../../actions';
 import { FormProps } from '../../components/forms';
 import * as styles from './signup.module.css';
-import config from '../../../config';
+import { config } from '../../../config';
 
 const Form: React.FC<FormProps> = React.lazy(() =>
   import(/* webpackChunkName: "Signup-Form"*/ '../../components/forms'),
